@@ -1,1 +1,77 @@
+{
+  "case_id": "",
+  "case_title": "",
+  "platform": "",
+  "analyst_name": "",
+  "analysis_date": "",
+  "timezone_used": "",
 
+  "answers": {
+    "q1": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q2": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q3": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q4": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q5": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q6": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q7": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q8": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+    "q9": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+    "q10": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+  },
+
+  "final_assessment": {
+    "summary": "",
+    "confidence_level": "",
+    "limitations": ""
+  }
+}
