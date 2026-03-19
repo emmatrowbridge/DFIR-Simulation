@@ -3,7 +3,6 @@
 # Each row represents a single event supported by evidence.
 # Only include events relevant to understanding the incident.
 # Do not delete or rename columns.
-
 event_id,timestamp,event_description,artifact_source,artifact_path,notes
 1,,,,,
 2,,,,,
