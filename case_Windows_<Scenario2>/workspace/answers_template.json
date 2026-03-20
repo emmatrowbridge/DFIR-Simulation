@@ -1,0 +1,111 @@
+{
+  "_instructions": {
+    "description": "This file contains your structured answers to the investigation questions. Fill in each field based only on evidence from the case.",
+    "rules": [
+      "All answers must be derived directly from provided artifacts.",
+      "Do not guess or approximate answers.",
+      "Timestamps must follow the format: YYYY-MM-DD HH:MM:SS.",
+      "Use the correct timezone as specified in the case materials.",
+      "Artifact sources should clearly identify where the evidence was found.",
+      "Artifact paths should match the exact path or filename when applicable.",
+      "If multiple values are required, use a JSON array.",
+      "Do not modify the structure of this file."
+    ],
+    "field_explanations": {
+      "case_id": "Unique identifier for the case (provided in README).",
+      "case_title": "Name of the case.",
+      "platform": "Operating system of the case (e.g., macOS, Windows).",
+      "analyst_name": "Your name or identifier.",
+      "analysis_date": "Date the analysis was completed.",
+      "timezone_used": "Timezone used for all timestamps in this file.",
+      "answers": {
+        "question": "The investigation question being answered.",
+        "answer": "Your final answer.",
+        "artifact_source": "The artifact used to support the answer (e.g., Safari History, Event Logs).",
+        "notes": "Optional short explanation of how the answer was derived."
+      },
+      "final_assessment": {
+        "summary": "Short summary of what occurred in the incident.",
+        "confidence_level": "Your confidence in your findings (e.g., High, Medium, Low).",
+        "limitations": "Any uncertainty or missing data that affected your analysis."
+      }
+    }
+  },
+
+{
+  "case_id": "",
+  "case_title": "",
+  "platform": "",
+  "analyst_name": "",
+  "analysis_date": "",
+  "timezone_used": "",
+
+  "answers": {
+    "q1": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q2": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q3": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q4": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q5": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q6": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q7": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q8": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+    "q9": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+    "q10": {
+      "question": "",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    }
+  },
+
+  "final_assessment": {
+    "summary": "",
+    "confidence_level": "",
+    "limitations": ""
+  }
+}
