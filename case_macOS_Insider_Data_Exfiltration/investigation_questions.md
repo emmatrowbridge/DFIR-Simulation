@@ -8,4 +8,3 @@
 8. Which Google account(s) were involved in the activity?
 9. What sequence of observable actions suggests data movement between accounts?
 10. What type of incident best explains the observed activity?
-11. 
