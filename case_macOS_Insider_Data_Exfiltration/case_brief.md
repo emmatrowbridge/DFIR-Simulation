@@ -26,10 +26,10 @@ Due to the timing and context, this activity has been flagged for review.
 ---
 ## System Information
 
-* **Hostname:** alp-macbook-jwang
-* **Operating System:** macOS Sonoma
-* **Timezone:** America/New_York
-* **User:** jwang
+**Hostname:** alp-macbook-jwang
+**Operating System:** macOS Sonoma
+**Timezone:** America/New_York
+**User:** jwang
 
 This system is Jason’s company-issued travel laptop. It contains a mix of work-related and personal activities and is not configured as a tightly restricted enterprise device.
 
