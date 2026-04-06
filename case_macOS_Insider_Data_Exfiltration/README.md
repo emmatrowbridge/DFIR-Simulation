@@ -24,92 +24,97 @@ No conclusions have been made.
 Your role is to investigate what happened using the available evidence.
 
 ---
-
 ## Repository Structure
+
 ```
 case_macOS_insider_data_exfiltration/
 │
-├── README.md (you are here!)
+├── README.md
 ├── case_brief.md
 ├── investigation_questions.md
 │
 ├── evidence/
-│   ├── artifacts/
-│   │   ├── Browser/
-│   │   │   ├── chrome_history.csv
-│   │   │   └── cookies.csv
-│   │   │
-│   │   └── FileSystem/
-│   │       ├── Desktop/
-│   │       │   ├── meeting_notes.txt
-│   │       │   └── todo.md
-│   │       │
-│   │       ├── Documents/
-│   │       │   ├── Notes/
-│   │       │   │   └── ideas.txt
-│   │       │   │
-│   │       │   ├── Personal/
-│   │       │   │   └── journal.txt
-│   │       │   │
-│   │       │   └── archive/
-│   │       │       ├── api_keys.txt
-│   │       │       ├── customer_data.csv
-│   │       │       └── internal_roadmap.pdf
-│   │       │
-│   │       └── Projects/
-│   │           ├── alp-app/
-│   │           │   ├── app.py
-│   │           │   └── test.sh
-│   │           │
-│   │           └── internal-tools/
-│   │               ├── api_keys.txt
-│   │               ├── customer_data.csv
-│   │               └── internal_roadmap.pdf
+│   ├── BrowserArtifacts/
+│   │   ├── chrome_history.csv
+│   │   └── cookies.csv
 │   │
-│   └── disk_image/
-│       └── image.md (full disk image — optional)
+│   └── FileSystem/
+│       ├── Desktop/
+│       │   ├── meeting_notes.txt
+│       │   └── todo.md
+│       │
+│       ├── Documents/
+│       │   ├── Notes/
+│       │   │   └── ideas.txt
+│       │   │
+│       │   ├── Personal/
+│       │   │   └── journal.txt
+│       │   │
+│       │   └── archive/
+│       │       ├── api_keys.txt
+│       │       ├── customer_data.csv
+│       │       └── internal_roadmap.pdf
+│       │
+│       └── Projects/
+│           ├── alp-app/
+│           │   ├── app.py
+│           │   └── test.sh
+│           │
+│           └── internal-tools/
+│               ├── api_keys.txt
+│               ├── customer_data.csv
+│               └── internal_roadmap.pdf
 │
 ├── workspace/
-│   ├── answers_template.json
-│   ├── timeline_template.csv
-│   └── timeline_template_notes.txt
+│   └── (your working files go here)
 │
-├── validation/
-│   └── check_answers.py
-│
-└── tools/
-    ├── README.md
-    ├── docker-compose.yml
-    └── config/
-        └── timesketch.conf
+└── validation/
+    └── check_answers.py
 ```
+
 ---
 
 ## What You Are Given
 
-### Artifacts (Primary Evidence)
+### Browser Artifacts
 
-You will primarily work with extracted artifacts, including:
+Located in:
 
-* **Browser Data**
+```
+evidence/BrowserArtifacts/
+```
 
-  * Chrome browsing history
-  * Cookies
+Includes:
 
-* **Filesystem Data**
+* Chrome browsing history
+* Cookies
 
-  * Desktop files
-  * Documents directory
-  * Project directories
+These artifacts help identify:
 
-These artifacts contain the key evidence needed to complete the investigation.
+* External services accessed
+* Timing of browser activity
 
 ---
 
-### Disk Image (Optional)
+### Filesystem Artifacts
 
-A full disk image may also be included for advanced analysis.
-However, this case is designed to be solved using the provided artifacts alone.
+Located in:
+
+```
+evidence/FileSystem/
+```
+
+Includes:
+
+* Desktop files
+* Documents (including user-created directories)
+* Project directories and internal files
+
+These artifacts help identify:
+
+* File access behavior
+* File staging or copying
+* Contextual user activity
 
 ---
 
@@ -136,36 +141,14 @@ You may use any approach you prefer, including:
 * Manual inspection
 * Spreadsheet analysis
 * Scripting (e.g., Python)
-* DFIR tools (optional)
 
 To successfully complete the case, you will need to:
 
-* Analyze filesystem structure and file metadata
+* Analyze filesystem structure and file relationships
 * Identify file access and staging behavior
-* Examine browser history for external interactions
-* Correlate activity across multiple data sources
-* Reconstruct a logical sequence of events
-
----
-
-## Workspace Files
-
-You will record your findings using the provided workspace templates.
-
-### Required
-
-* `answers_template.json`
-
-  * Contains structured answers to investigation questions
-  * This file is used for validation
-
-### Recommended
-
-* `timeline_template.csv`
-
-  * Used to organize events chronologically
-  * Helps support your conclusions
-  * Not automatically graded, but strongly recommended
+* Examine browser history for external activity
+* Correlate events across filesystem and browser artifacts
+* Reconstruct a logical sequence of actions
 
 ---
 
@@ -185,7 +168,7 @@ If an answer cannot be supported by the provided artifacts, it should not be inc
 
 After completing your answers, run:
 
-```bash
+```
 python validation/check_answers.py
 ```
 
@@ -229,14 +212,13 @@ By completing this case, you will:
 
 1. Read `case_brief.md`
 2. Review `investigation_questions.md`
-3. Begin analyzing the artifacts in `evidence/artifacts/`
-4. Record your findings in the workspace files
+3. Begin analyzing the artifacts in `evidence/`
 
 ---
 
 ## Final Note
 
-This case is designed to reflect how real investigations work:
+This case reflects how real investigations work:
 
 Individual actions may appear normal in isolation.
 Your task is to determine whether they form a meaningful pattern when viewed together.
