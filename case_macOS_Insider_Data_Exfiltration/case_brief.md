@@ -33,6 +33,15 @@ Due to the timing and context, this activity has been flagged for review.
 This system is Jason’s company-issued travel laptop. It contains a mix of work-related and personal activities and is not configured as a tightly restricted enterprise device.
 
 ---
+## Account Context
+
+Jason uses multiple Google accounts on this system:
+* A work-related account used for development activity  
+* A personal account accessible within the same browser  
+
+This setup allows multiple accounts to be active within a single browser session.
+
+---
 ## Investigation Scope
 
 You have been provided with forensic artifacts extracted from Jason’s system.
