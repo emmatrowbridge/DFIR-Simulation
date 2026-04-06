@@ -110,7 +110,7 @@ They include:
 * Documents (including user-created directories)
 * Project directories and internal files
 
-These are **actual files recovered from the system**, organized to reflect the original directory structure.
+These are files recovered from the system and organized to reflect the original directory structure.
 
 ---
 ### Important Note on Filesystem Data
@@ -143,6 +143,8 @@ Your task is to:
 4. Answer all investigation questions
 5. Ensure every conclusion is supported by evidence
 
+You should expect to combine multiple artifacts to answer most questions rather than relying on a single source.
+
 ---
 ## Investigation Approach
 
@@ -162,7 +164,7 @@ To successfully complete the case, you will need to:
 * Correlate filesystem state with browser events
 * Reconstruct a logical sequence of actions
 
-Note: Because filesystem metadata is intentionally limited, **timeline reconstruction will depend heavily on browser artifacts and logical inference based on file placement and duplication**.
+Note: Because filesystem metadata is intentionally limited, **timeline reconstruction will depend heavily on browser artifacts and logical inference based on file placement and duplication**. In this case, timestamps are primarily derived from browser artifacts rather than filesystem metadata.
 
 ---
 ## Workspace Files
@@ -202,7 +204,7 @@ The `workspace/` directory contains templates you will use to record your findin
 All answers must:
 
 * Be directly supported by evidence
-* Match artifact data exactly (file names, paths, timestamps)
+* Match artifact data exactly (file names, paths, and values present in the artifacts)
 * Avoid assumptions not backed by observable data
 
 If an answer cannot be supported by the provided artifacts, it should not be included.
@@ -262,7 +264,7 @@ By completing this case, you will:
 This case reflects how real investigations work:
 
 Individual actions may appear normal in isolation.
-Your task is to determine whether they form a meaningful pattern when viewed together.
+Your task is to determine whether they form a meaningful pattern when correlated together.
 
 ---
 
