@@ -90,7 +90,6 @@ These artifacts help identify:
 * External services accessed
 * Timing of browser activity
 
----
 ### Filesystem Artifacts
 
 Located in:
@@ -107,7 +106,6 @@ They include:
 
 These are files recovered from the system and organized to reflect the original directory structure.
 
----
 ### Important Note on Filesystem Data
 
 These files are **not full forensic exports** and may not include complete metadata such as:
@@ -167,7 +165,6 @@ The `workspace/` directory contains templates you will use to record your findin
   This file contains the structured format for answering the investigation questions.
   You must complete this file before running validation.
 
----
 ### Strongly Recommended
 
 * `timeline_template.csv`
@@ -180,7 +177,6 @@ The `workspace/` directory contains templates you will use to record your findin
   * How to correlate artifacts
   * How to document supporting evidence
 
----
 ### Important
 
 * Only `answers_template.json` is checked by the validation script
@@ -252,4 +248,4 @@ Your task is to determine whether they form a meaningful pattern when correlated
 
 ---
 
-Good luck.
+Good luck!
