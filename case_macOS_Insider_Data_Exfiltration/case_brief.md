@@ -17,7 +17,6 @@ An employee, **Jason Wang**, recently submitted his two-week resignation notice.
 Shortly after, the security team observed **unusual activity** associated with his account over the weekend.
 
 This activity included:
-
 * Access patterns outside normal working hours
 * Interaction with external, cloud-based services
 * A login to a Google account from an unfamiliar IP address
@@ -27,21 +26,12 @@ Due to the timing and context, this activity has been flagged for review.
 ---
 ## System Information
 
-* Hostname: alp-macbook-jwang
-* Operating System: macOS
-* User: jwang
+* **Hostname:** alp-macbook-jwang
+* **Operating System:** macOS Sonoma
+* **Timezone:** America/New_York
+* **User:** jwang
 
-This system is a company-issued developer laptop used for both work-related and limited personal activity.
-
----
-## Account Context
-
-The user operates with multiple accounts accessible from the same system:
-
-* A **work-related account** used for development activity
-* A **personal account** accessible within the same browser
-
-This configuration allows multiple accounts to be active within a single browser session.
+This system is Jason’s company-issued travel laptop. It contains a mix of work-related and personal activities and is not configured as a tightly restricted enterprise device.
 
 ---
 ## Investigation Scope
@@ -49,7 +39,6 @@ This configuration allows multiple accounts to be active within a single browser
 You have been provided with forensic artifacts extracted from Jason’s system.
 
 Your task is to determine:
-
 * What activity occurred on the system
 * Whether any internal data was accessed or moved
 * Whether the observed behavior is consistent with normal usage or something more concerning
@@ -66,4 +55,4 @@ This investigation focuses on **what happened**, not why.
 ---
 ## Objective
 
-Analyze the provided artifacts and reconstruct a **clear, evidence-supported sequence of events**.
+No conclusions have been made. The purpose of the investigation is to determine what occurred and whether any sensitive data was mishandled. Analyze the provided artifacts and reconstruct a **clear, evidence-supported sequence of events**.
