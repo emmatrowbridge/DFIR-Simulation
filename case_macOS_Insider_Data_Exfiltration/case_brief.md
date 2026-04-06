@@ -42,6 +42,8 @@ Your task is to determine:
 * Whether any internal data was accessed, copied, or transferred
 * Whether the observed behavior is consistent with normal usage or something more concerning
 
+Some activity may need to be inferred through correlation of multiple artifacts rather than directly observed.
+
 ---
 ## Important Notes
 
