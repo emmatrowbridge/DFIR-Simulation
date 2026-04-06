@@ -4,7 +4,6 @@
 ## macOS Insider Data Exfiltration
 
 ---
-
 ## Overview
 
 This case simulates a digital forensics and incident response (DFIR) investigation involving potential insider data exfiltration on a macOS system.
@@ -14,7 +13,6 @@ You are provided with a curated set of forensic artifacts extracted from a compa
 This is an **introductory-level (easy)** case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, timeline reconstruction, and correlation of events.
 
 ---
-
 ## Scenario Summary
 
 A company employee’s system has been flagged for unusual activity shortly after submitting their resignation. The behavior involves access to internal files and interaction with external services.
@@ -66,14 +64,15 @@ case_macOS_insider_data_exfiltration/
 │               └── internal_roadmap.pdf
 │
 ├── workspace/
-│   └── (your working files go here)
+│   ├── answers_template.json
+│   ├── timeline_template.csv
+│   └── timeline_template_notes.txt
 │
 └── validation/
     └── check_answers.py
 ```
 
 ---
-
 ## What You Are Given
 
 ### Browser Artifacts
@@ -95,7 +94,6 @@ These artifacts help identify:
 * Timing of browser activity
 
 ---
-
 ### Filesystem Artifacts
 
 Located in:
@@ -117,7 +115,6 @@ These artifacts help identify:
 * Contextual user activity
 
 ---
-
 ## Your Objective
 
 You are acting as a forensic analyst.
@@ -131,7 +128,6 @@ Your task is to:
 5. Ensure every conclusion is supported by evidence
 
 ---
-
 ## Investigation Approach
 
 This case is **artifact-driven**, not tool-driven.
@@ -151,7 +147,38 @@ To successfully complete the case, you will need to:
 * Reconstruct a logical sequence of actions
 
 ---
+## Workspace Files
 
+The `workspace/` directory contains templates you will use to record your findings.
+
+### Required
+
+* `answers_template.json`
+  This file contains the structured format for answering the investigation questions.
+  You must complete this file before running validation.
+
+---
+### Strongly Recommended
+
+* `timeline_template.csv`
+  Use this file to build a timeline of events.
+  This will help you organize findings and support your answers.
+
+* `timeline_template_notes.txt`
+  Provides guidance on how to construct a timeline, including:
+
+  * What types of events to include
+  * How to correlate artifacts
+  * How to document supporting evidence
+
+---
+### Important
+
+* Only `answers_template.json` is graded by the validation script
+* The timeline files are for your analysis process
+* A well-constructed timeline will make this case significantly easier
+
+---
 ## Answer Requirements
 
 All answers must:
@@ -163,12 +190,11 @@ All answers must:
 If an answer cannot be supported by the provided artifacts, it should not be included.
 
 ---
-
 ## Validation
 
 After completing your answers, run:
 
-```
+```bash
 python validation/check_answers.py
 ```
 
@@ -184,7 +210,6 @@ The validation system will NOT:
 * Partially credit responses
 
 ---
-
 ## Important Guidelines
 
 * Not all artifacts are relevant
@@ -196,7 +221,6 @@ The validation system will NOT:
 This investigation focuses on **what happened**, not speculation.
 
 ---
-
 ## Learning Goals
 
 By completing this case, you will:
@@ -207,15 +231,14 @@ By completing this case, you will:
 * Produce defensible, evidence-based conclusions
 
 ---
-
 ## Getting Started
 
 1. Read `case_brief.md`
 2. Review `investigation_questions.md`
 3. Begin analyzing the artifacts in `evidence/`
+4. Record your findings in the workspace files
 
 ---
-
 ## Final Note
 
 This case reflects how real investigations work:
