@@ -1,4 +1,5 @@
 # DFIR Simulation Platform
+**By: Emma Trowbridge and Cam Zabroski**
 
 ## macOS Insider Data Exfiltration
 
