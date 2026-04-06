@@ -1,60 +1,220 @@
-macOS Insider Data Exfiltration — Investigation Guide
+# DFIR Simulation Case
 
-Overview
-This case provides a structured set of forensic artifacts for analyzing a potential insider data exfiltration scenario on a macOS system.
-The case is artifact-driven. You will work with extracted evidence rather than a full disk image.
-Getting Started
-Read the Case Brief to understand the scenario
-Review the investigation questions
-Begin analysis using the provided artifacts
-Evidence Overview
-Filesystem Artifacts
-Location: evidence/filesystem
-These artifacts include project directories, user files, and potential staging locations. They provide insight into file access and modification activity.
-Browser Artifacts
-Location: evidence/browser
-These artifacts include Chrome data such as browsing history, cookies, login data, and preferences. They provide insight into web activity and account usage.
+## macOS Insider Data Exfiltration
 
-Parsed Artifacts
-Location: evidence/parsed
-These artifacts include extracted and preprocessed data such as CSV files. They are provided to support faster analysis and alternative workflows.
+---
 
-Investigation Approach
-You are expected to:
-• Identify relevant artifacts
- • Distinguish meaningful activity from background noise
- • Correlate events across multiple data sources
- • Reconstruct a timeline of activity
-The key to this case is correlation, not any single artifact.
+## Overview
 
-Workspace
-Use the workspace directory to organize your findings.
+This case simulates a digital forensics and incident response (DFIR) investigation involving potential insider data exfiltration on a macOS system.
 
-Answers Template
-The answers template should be used to record structured responses to the investigation questions.
-Timeline Template
-The timeline template should be used to document key events, their order, and the evidence supporting them.
-Tools
-You may use any tools you prefer, including:
-• Spreadsheet software
- • SQLite database viewers
- • Text editors
- • Timeline tools
-No specific tool is required.
-Important Notes
-• Not all actions are directly observable
- • Some conclusions require inference
- • Focus on evidence, not assumptions
-Objective
-Your goal is to reconstruct what occurred on the system and determine whether the observed activity is consistent with normal behavior or indicative of inappropriate data handling.
-Final Output
-At the end of the investigation, you should produce:
-• Completed answers to all investigation questions
- • A structured timeline of events
- • A defensible explanation of the observed activity
-Optional Use of Full Disk Image and Tools
-A full disk image and supporting analysis tools are provided as part of this case for users who wish to perform a complete forensic workflow.
-You may choose to use these tools to independently parse the image and extract artifacts. This approach more closely reflects real-world DFIR investigations and allows for deeper exploration of the system.
-However, use of the disk image and tools is not required to complete this investigation.
-All necessary artifacts have already been extracted and are available within the provided evidence directories. These artifacts contain sufficient information to answer all investigation questions and reconstruct the timeline of events.
-Students are encouraged to focus on analyzing the provided artifacts and developing a defensible narrative based on the available evidence.
+You are provided with a curated set of forensic artifacts extracted from a company-issued device. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
+
+This is an **introductory-level (easy)** case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, timeline reconstruction, and correlation of events.
+
+---
+
+## Scenario Summary
+
+A company employee’s system has been flagged for unusual activity shortly after submitting their resignation. The behavior involves access to internal files and interaction with external services.
+
+No conclusions have been made.
+
+Your role is to investigate what happened using the available evidence.
+
+---
+
+## Repository Structure
+
+```
+case_macOS_insider_data_exfiltration/
+│
+├── case_brief.md
+├── investigation_questions.md
+│
+├── evidence/
+│   ├── artifacts/
+│   │   ├── browser/
+│   │   │   ├── chrome_history.csv
+│   │   │   └── cookies.csv
+│   │   │
+│   │   └── filesystem/
+│   │       ├── Desktop/
+│   │       ├── Documents/
+│   │       └── Projects/
+│   │
+│   └── disk_image/
+│       └── (full disk image - optional)
+│
+├── workspace/
+│   ├── answers_template.json
+│   └── timeline_template.csv
+│
+├── validation/
+│   └── check_answers.py
+│
+└── tools/
+    └── (analysis environment and setup instructions)
+```
+
+---
+
+## What You Are Given
+
+### Artifacts (Primary Evidence)
+
+You will primarily work with extracted artifacts, including:
+
+* **Browser Data**
+
+  * Chrome browsing history
+  * Cookies
+
+* **Filesystem Data**
+
+  * Desktop files
+  * Documents directory
+  * Project directories
+
+These artifacts contain the key evidence needed to complete the investigation.
+
+---
+
+### Disk Image (Optional)
+
+A full disk image may also be included for advanced analysis.
+However, this case is designed to be solved using the provided artifacts alone.
+
+---
+
+## Your Objective
+
+You are acting as a forensic analyst.
+
+Your task is to:
+
+1. Examine the provided artifacts
+2. Identify relevant activity
+3. Reconstruct a timeline of events
+4. Answer all investigation questions
+5. Ensure every conclusion is supported by evidence
+
+---
+
+## Investigation Approach
+
+This case is **artifact-driven**, not tool-driven.
+
+You may use any approach you prefer, including:
+
+* Manual inspection
+* Spreadsheet analysis
+* Scripting (e.g., Python)
+* DFIR tools (optional)
+
+To successfully complete the case, you will need to:
+
+* Analyze filesystem structure and file metadata
+* Identify file access and staging behavior
+* Examine browser history for external interactions
+* Correlate activity across multiple data sources
+* Reconstruct a logical sequence of events
+
+---
+
+## Workspace Files
+
+You will record your findings using the provided workspace templates.
+
+### Required
+
+* `answers_template.json`
+
+  * Contains structured answers to investigation questions
+  * This file is used for validation
+
+### Recommended
+
+* `timeline_template.csv`
+
+  * Used to organize events chronologically
+  * Helps support your conclusions
+  * Not automatically graded, but strongly recommended
+
+---
+
+## Answer Requirements
+
+All answers must:
+
+* Be directly supported by evidence
+* Match artifact data exactly (file names, paths, timestamps)
+* Avoid assumptions not backed by observable data
+
+If an answer cannot be supported by the provided artifacts, it should not be included.
+
+---
+
+## Validation
+
+After completing your answers, run:
+
+```bash
+python validation/check_answers.py
+```
+
+The validation system will:
+
+* Check each answer for correctness
+* Indicate correct vs incorrect responses
+
+The validation system will NOT:
+
+* Provide hints
+* Reveal correct answers
+* Partially credit responses
+
+---
+
+## Important Guidelines
+
+* Not all artifacts are relevant
+* Background activity is intentionally included
+* Some conclusions require correlating multiple artifacts
+* The absence of expected activity can be meaningful
+* Do not assume malicious intent without evidence
+
+This investigation focuses on **what happened**, not speculation.
+
+---
+
+## Learning Goals
+
+By completing this case, you will:
+
+* Identify and interpret common forensic artifacts
+* Correlate filesystem and browser activity
+* Reconstruct a clear investigative timeline
+* Produce defensible, evidence-based conclusions
+
+---
+
+## Getting Started
+
+1. Read `case_brief.md`
+2. Review `investigation_questions.md`
+3. Begin analyzing the artifacts in `evidence/artifacts/`
+4. Record your findings in the workspace files
+
+---
+
+## Final Note
+
+This case is designed to reflect how real investigations work:
+
+Individual actions may appear normal in isolation.
+Your task is to determine whether they form a meaningful pattern when viewed together.
+
+---
+
+Good luck.
