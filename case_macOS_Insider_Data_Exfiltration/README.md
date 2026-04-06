@@ -67,7 +67,7 @@ case_macOS_insider_data_exfiltration/
 │   │               └── internal_roadmap.pdf
 │   │
 │   └── disk_image/
-│       └── image.md (full disk image - optional)
+│       └── image.md (full disk image — optional)
 │
 ├── workspace/
 │   ├── answers_template.json
@@ -83,7 +83,6 @@ case_macOS_insider_data_exfiltration/
     └── config/
         └── timesketch.conf
 ```
-
 ---
 
 ## What You Are Given
