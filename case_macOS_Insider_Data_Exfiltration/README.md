@@ -78,18 +78,15 @@ case_macOS_insider_data_exfiltration/
 ### Browser Artifacts
 
 Located in:
-
 ```
 evidence/BrowserArtifacts/
 ```
 
 Includes:
-
 * Chrome browsing history
 * Cookies
 
 These artifacts help identify:
-
 * External services accessed
 * Timing of browser activity
 
@@ -97,7 +94,6 @@ These artifacts help identify:
 ### Filesystem Artifacts
 
 Located in:
-
 ```
 evidence/FileSystem/
 ```
@@ -105,7 +101,6 @@ evidence/FileSystem/
 These artifacts represent a reconstructed view of the user’s filesystem based on files extracted from the disk image.
 
 They include:
-
 * Desktop files
 * Documents (including user-created directories)
 * Project directories and internal files
@@ -116,13 +111,11 @@ These are files recovered from the system and organized to reflect the original 
 ### Important Note on Filesystem Data
 
 These files are **not full forensic exports** and may not include complete metadata such as:
-
 * Precise access timestamps
 * Full MAC time history
 * Low-level filesystem artifacts
 
 Instead, the filesystem evidence in this case is intended to help you:
-
 * Identify which files exist and where
 * Understand relationships between directories
 * Recognize staging or duplication of files
@@ -136,7 +129,6 @@ You will need to rely on **combining filesystem structure with browser activity*
 You are acting as a forensic analyst.
 
 Your task is to:
-
 1. Examine the provided artifacts
 2. Identify relevant activity
 3. Reconstruct a timeline of events
@@ -151,13 +143,11 @@ You should expect to combine multiple artifacts to answer most questions rather 
 This case is **artifact-driven**, not tool-driven.
 
 You may use any approach you prefer, including:
-
 * Manual inspection
 * Spreadsheet analysis
 * Scripting (e.g., Python)
 
 To successfully complete the case, you will need to:
-
 * Analyze filesystem structure and file relationships
 * Identify duplicated or staged files across directories
 * Examine browser history for external activity
@@ -186,7 +176,6 @@ The `workspace/` directory contains templates you will use to record your findin
 
 * `timeline_template_notes.txt`
   Provides guidance on how to construct a timeline, including:
-
   * What types of events to include
   * How to correlate artifacts
   * How to document supporting evidence
@@ -202,7 +191,6 @@ The `workspace/` directory contains templates you will use to record your findin
 ## Answer Requirements
 
 All answers must:
-
 * Be directly supported by evidence
 * Match artifact data exactly (file names, paths, and values present in the artifacts)
 * Avoid assumptions not backed by observable data
@@ -213,18 +201,15 @@ If an answer cannot be supported by the provided artifacts, it should not be inc
 ## Validation
 
 After completing your answers, run:
-
 ```bash
 python validation/check_answers.py
 ```
 
 The validation system will:
-
 * Check each answer for correctness
 * Indicate correct vs incorrect responses
 
 The validation system will NOT:
-
 * Provide hints
 * Reveal correct answers
 * Partially credit responses
@@ -244,7 +229,6 @@ This investigation focuses on **what happened**, not speculation.
 ## Learning Goals
 
 By completing this case, you will:
-
 * Identify and interpret common forensic artifacts
 * Correlate filesystem and browser activity
 * Reconstruct a clear investigative timeline
