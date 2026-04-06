@@ -17,7 +17,7 @@ An employee, **Jason Wang**, recently submitted his two-week resignation notice.
 Shortly after, the security team observed **unusual activity** associated with his account over the weekend.
 
 This activity included:
-* Activity involving internal files outside normal working hours
+* Activity involving internal files occurring outside normal working hours
 * Interaction with external, cloud-based services
 * A login to a Google account from an unfamiliar IP address shortly after the observed activity
 
