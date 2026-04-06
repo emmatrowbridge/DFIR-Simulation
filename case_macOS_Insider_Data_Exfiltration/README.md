@@ -26,36 +26,62 @@ Your role is to investigate what happened using the available evidence.
 ---
 
 ## Repository Structure
-
 ```
 case_macOS_insider_data_exfiltration/
 │
+├── README.md (you are here!)
 ├── case_brief.md
 ├── investigation_questions.md
 │
 ├── evidence/
 │   ├── artifacts/
-│   │   ├── browser/
+│   │   ├── Browser/
 │   │   │   ├── chrome_history.csv
 │   │   │   └── cookies.csv
 │   │   │
-│   │   └── filesystem/
+│   │   └── FileSystem/
 │   │       ├── Desktop/
+│   │       │   ├── meeting_notes.txt
+│   │       │   └── todo.md
+│   │       │
 │   │       ├── Documents/
+│   │       │   ├── Notes/
+│   │       │   │   └── ideas.txt
+│   │       │   │
+│   │       │   ├── Personal/
+│   │       │   │   └── journal.txt
+│   │       │   │
+│   │       │   └── archive/
+│   │       │       ├── api_keys.txt
+│   │       │       ├── customer_data.csv
+│   │       │       └── internal_roadmap.pdf
+│   │       │
 │   │       └── Projects/
+│   │           ├── alp-app/
+│   │           │   ├── app.py
+│   │           │   └── test.sh
+│   │           │
+│   │           └── internal-tools/
+│   │               ├── api_keys.txt
+│   │               ├── customer_data.csv
+│   │               └── internal_roadmap.pdf
 │   │
 │   └── disk_image/
-│       └── (full disk image - optional)
+│       └── image.md (full disk image - optional)
 │
 ├── workspace/
 │   ├── answers_template.json
-│   └── timeline_template.csv
+│   ├── timeline_template.csv
+│   └── timeline_template_notes.txt
 │
 ├── validation/
 │   └── check_answers.py
 │
 └── tools/
-    └── (analysis environment and setup instructions)
+    ├── README.md
+    ├── docker-compose.yml
+    └── config/
+        └── timesketch.conf
 ```
 
 ---
