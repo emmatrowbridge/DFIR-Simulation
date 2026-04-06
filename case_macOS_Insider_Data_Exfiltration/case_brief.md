@@ -19,7 +19,7 @@ Shortly after, the security team observed **unusual activity** associated with h
 This activity included:
 * Access patterns outside normal working hours
 * Interaction with external, cloud-based services
-* A login to a Google account from an unfamiliar IP address
+* A login to a Google account from an unfamiliar IP address shortly after the observed activity
 
 Due to the timing and context, this activity has been flagged for review.
 
@@ -39,7 +39,7 @@ You have been provided with forensic artifacts extracted from Jason’s system.
 
 Your task is to determine:
 * What activity occurred on the system
-* Whether any internal data was accessed or moved
+* Whether any internal data was accessed, copied, or transferred
 * Whether the observed behavior is consistent with normal usage or something more concerning
 
 ---
