@@ -1,4 +1,4 @@
-# DFIR Simulation Case
+# DFIR Simulation Platform
 
 ## macOS Insider Data Exfiltration
 
