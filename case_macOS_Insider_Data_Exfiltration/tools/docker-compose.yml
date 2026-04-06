@@ -152,5 +152,3 @@ services:
 volumes:
   opensearch-data:
   postgres-data:
-
-
