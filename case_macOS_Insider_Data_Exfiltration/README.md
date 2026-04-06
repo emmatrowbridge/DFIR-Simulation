@@ -102,17 +102,33 @@ Located in:
 evidence/FileSystem/
 ```
 
-Includes:
+These artifacts represent a reconstructed view of the user’s filesystem based on files extracted from the disk image.
+
+They include:
 
 * Desktop files
 * Documents (including user-created directories)
 * Project directories and internal files
 
-These artifacts help identify:
+These are **actual files recovered from the system**, organized to reflect the original directory structure.
 
-* File access behavior
-* File staging or copying
-* Contextual user activity
+---
+### Important Note on Filesystem Data
+
+These files are **not full forensic exports** and may not include complete metadata such as:
+
+* Precise access timestamps
+* Full MAC time history
+* Low-level filesystem artifacts
+
+Instead, the filesystem evidence in this case is intended to help you:
+
+* Identify which files exist and where
+* Understand relationships between directories
+* Recognize staging or duplication of files
+* Provide context for user activity
+
+You will need to rely on **combining filesystem structure with browser activity** to reconstruct events.
 
 ---
 ## Your Objective
@@ -141,10 +157,12 @@ You may use any approach you prefer, including:
 To successfully complete the case, you will need to:
 
 * Analyze filesystem structure and file relationships
-* Identify file access and staging behavior
+* Identify duplicated or staged files across directories
 * Examine browser history for external activity
-* Correlate events across filesystem and browser artifacts
+* Correlate filesystem state with browser events
 * Reconstruct a logical sequence of actions
+
+Note: Because filesystem metadata is intentionally limited, **timeline reconstruction will depend heavily on browser artifacts and logical inference based on file placement and duplication**.
 
 ---
 ## Workspace Files
@@ -174,7 +192,7 @@ The `workspace/` directory contains templates you will use to record your findin
 ---
 ### Important
 
-* Only `answers_template.json` is graded by the validation script
+* Only `answers_template.json` is checked by the validation script
 * The timeline files are for your analysis process
 * A well-constructed timeline will make this case significantly easier
 
