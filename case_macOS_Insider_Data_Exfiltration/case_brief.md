@@ -54,4 +54,6 @@ This investigation focuses on **what happened**, not why.
 ---
 ## Objective
 
-No conclusions have been made. The purpose of the investigation is to determine what occurred and whether any sensitive data was mishandled. Analyze the provided artifacts and reconstruct a **clear, evidence-supported sequence of events**.
+No conclusions have been made. The purpose of the investigation is to determine what occurred and whether any sensitive data was mishandled. 
+
+Analyze the provided artifacts and reconstruct a **clear, evidence-supported sequence of events**.
