@@ -5,6 +5,7 @@ Answer the following questions using only the provided evidence.
 
 All answers must be directly supported by artifacts.
 
+---
 ## Filesystem Activity
 
 1. Which files are present within the `internal-tools` directory?
@@ -29,7 +30,6 @@ All answers must be directly supported by artifacts.
 8. Based on the available evidence, what type of incident does this activity most closely represent?
 
 ---
-
 ## Instructions
 
 * Use exact file names and paths where applicable
