@@ -27,7 +27,7 @@ Your role is to investigate what happened using the available evidence.
 ```
 case_macOS_insider_data_exfiltration/
 │
-├── README.md
+├── README.md (you are here!)
 ├── case_brief.md
 ├── investigation_questions.md
 │
