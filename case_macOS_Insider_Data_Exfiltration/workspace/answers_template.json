@@ -2,11 +2,8 @@
   "_instructions": [
     "Complete each field using only the provided evidence.",
     "Use exact file names, paths, and values when the evidence supports them.",
-    "Do not leave required fields blank in your final answers.json submission.",
-    "Do not add assumptions that are not supported by the artifacts.",
-    "For list fields, include one item per entry.",
-    "For q7_sequence_of_actions, provide an ordered sequence from local file activity to external interaction.",
-    "When finished, save your completed file as workspace/answers.json before running the validation script."
+    "Copy this file to workspace/answers.json before running validation.",
+    "Do not include assumptions that are not supported by the artifacts."
   ],
   "q1_internal_tools_files": [],
   "q2_staging_directory": "",
