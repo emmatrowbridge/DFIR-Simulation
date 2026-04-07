@@ -26,6 +26,7 @@ timeline_template.csv
 ```
 to organize events into a sequence.
 
+
 The timeline is not graded, but it is the most effective way to:
 * Understand what happened
 * Correlate multiple artifacts
