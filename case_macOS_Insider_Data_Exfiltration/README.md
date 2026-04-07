@@ -55,18 +55,20 @@ case_macOS_insider_data_exfiltration/
 │       │
 │       └── Projects/
 │           ├── alp-app/
-│           │   ├── app.py
-│           │   └── test.sh
+│           │   └── app.py
 │           │
-│           └── internal-tools/
-│               ├── api_keys.txt
-│               ├── customer_data.csv
-│               └── internal_roadmap.pdf
+│           ├── internal-tools/
+│           │   ├── api_keys.txt
+│           │   ├── customer_data.csv
+│           │   └── internal_roadmap.pdf
+│           │
+│           └── sandbox-scripts/
+│               └── test.sh
 │
 ├── workspace/
+│   ├── README.md
 │   ├── answers_template.json
-│   ├── timeline_template.csv
-│   └── timeline_template_notes.txt
+│   └── timeline_template.csv
 │
 └── validation/
     └── check_answers.py
