@@ -1,4 +1,4 @@
-event_id,timestamp,event_description,artifact_source,artifact_path,notes
+event_order,timestamp,artifact_source,artifact_path_or_reference,event_description,evidence_notes
 1,,,,,
 2,,,,,
 3,,,,,
@@ -14,4 +14,13 @@ event_id,timestamp,event_description,artifact_source,artifact_path,notes
 13,,,,,
 14,,,,,
 15,,,,,
-
+16,,,,,
+17,,,,,
+18,,,,,
+19,,,,,
+20,,,,,
+21,,,,,
+22,,,,,
+23,,,,,
+24,,,,,
+25,,,,,
