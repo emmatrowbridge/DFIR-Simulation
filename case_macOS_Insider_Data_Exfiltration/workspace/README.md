@@ -42,6 +42,14 @@ Include:
 * Which artifact supports it
 * Why the artifact supports your conclusion
 
+The timeline template includes more rows than you will likely need.
+
+* You are not expected to use every row
+* Only include meaningful events supported by evidence
+* Focus on quality of events, not quantity  
+
+A complete timeline for this case will typically use a subset of the available rows.
+
 ### Important Notes
 
 * Filesystem artifacts do **not include full timestamp metadata**
