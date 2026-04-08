@@ -54,27 +54,37 @@ You are expected to combine multiple artifacts and use logical reasoning to buil
 ### Step 3 — Record Your Answers
 Use `answers_template.json` to record your answers.
 
-Steps:
-1. From the case's root directory, run: `cp workspace/answers_template.json workspace/answers.json`.
+#### Creating Your Working File
+1. From the case root directory, run: `cp workspace/answers_template.json workspace/answers.json`.
 2. Open `workspace/answers.json` and fill in your answers.
 
+#### Example Format
+Use exact values from the artifacts.
 
+Example of a string field: "q0_example": "/Users/jwang/full_directory_path_here"
 
+Example of an array field: "q0_example": ["example1", "example2", "example3"]
 
+Some questions require a short, structured explanation rather than a single value. For example:
+  "q0_example_sequence_of_actions": [
+    "First step in the sequence",
+    "Second step in the sequence",
+    "Third step in the sequence"
+  ]
 
 ---
 ### Step 4 — Run Validation
+From the case root directory, run: `python validation/check_answers.py`.
 
-Run:
-```
-python validation/check_answers.py
-```
+The validation script checks whether your answers are correct, but it only reports correct or incorrect. It does not provide the correct answers, partial credit, or step-by-step hints. This is intentional.
 
-This will check your answers for correctness.
+The goal of this case is not just to get the right answers, but to develop the ability to:
+* Interpret artifacts
+* Correlate evidence
+* Reach defensible conclusions independently
 
 ---
 ## Final Goal
-
 By the end of this process, you should be able to:
 * Reconstruct a clear sequence of events
 * Explain how artifacts relate to each other
@@ -82,5 +92,4 @@ By the end of this process, you should be able to:
 * Answer all investigation questions confidently
 
 ---
-
 A strong investigation is not about finding a single clue—it is about connecting multiple pieces of evidence into a coherent explanation.
