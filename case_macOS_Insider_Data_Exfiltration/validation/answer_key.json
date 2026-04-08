@@ -13,7 +13,7 @@
   "validators": {
     "q1_relevant_directory": {
       "type": "exact_path",
-      "expected": "/Users/jwang/Projects/internal-tools",
+      "expected": "/Users/jwang/Projects/internal-tools"
     },
     "q2_relevant_files": {
       "type": "exact_set",
@@ -21,11 +21,11 @@
         "api_keys.txt",
         "customer_data.csv",
         "internal_roadmap.pdf"
-      ],
+      ]
     },
     "q3_staging_directory": {
       "type": "exact_path",
-      "expected": "/Users/jwang/Documents/archive",
+      "expected": "/Users/jwang/Documents/archive"
     },
     "q4_staging_evidence": {
       "type": "keyword_text",
@@ -45,7 +45,8 @@
           "archive",
           "staging directory"
         ]
-      },
+      }
+    },
     "q5_application_used": {
       "type": "keyword_list",
       "keywords": [
@@ -53,14 +54,13 @@
         "chrome"
       ]
     },
-    
     "q6_external_service": {
       "type": "keyword_list",
       "keywords": [
         "google drive",
         "drive"
       ]
-    }
+    },
     "q7_multiple_accounts_artifacts": {
       "type": "keyword_list",
       "keywords": [
@@ -68,7 +68,7 @@
         "cookies.csv",
         "chrome history",
         "cookies"
-      ],
+      ]
     },
     "q8_sequence_of_actions": {
       "type": "sequence",
@@ -93,7 +93,7 @@
           "chrome",
           "external service"
         ]
-      },
+      }
     }
   }
 }
