@@ -65,7 +65,7 @@ Example of a string field: `"q0_example": "/Users/jwang/full_directory_path_here
 
 Example of an array field: `"q0_example": ["example1", "example2", "example3"]`
 
-Some questions require a short, structured explanation rather than a single value. For example: `"q0_example_sequence_of_actions": ["First step in the sequence", "Second step in the sequence", "Third step in the sequence"]`
+Some questions require a short, structured sequence rather than a single value. For example: `"q0_example_sequence_of_actions": ["First step in the sequence", "Second step in the sequence", "Third step in the sequence"]`
 
 ---
 ### Step 4 — Run Validation
