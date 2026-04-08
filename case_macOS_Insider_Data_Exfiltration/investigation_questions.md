@@ -16,7 +16,7 @@ All answers must be directly supported by artifacts.
 6. What external service was accessed?
 7. Which artifact(s) suggest that multiple accounts were used during the activity?
 
-## Correlation and Assessment
+## Correlation
 8. Based on the artifacts, what sequence of actions can be reconstructed from local file activity to external interaction?
 
 ---
