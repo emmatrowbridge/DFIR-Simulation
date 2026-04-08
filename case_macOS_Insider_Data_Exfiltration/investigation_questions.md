@@ -1,6 +1,7 @@
 # Investigation Questions
 ---
 Answer the following questions using only the provided evidence.
+
 All answers must be directly supported by artifacts.
 
 ---
