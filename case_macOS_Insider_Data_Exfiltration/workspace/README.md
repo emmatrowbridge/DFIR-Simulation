@@ -56,7 +56,7 @@ Use `answers_template.json` to record your answers.
 
 #### Creating Your Working File
 1. From the case root directory, run: `cp workspace/answers_template.json workspace/answers.json`.
-2. Open `workspace/answers.json` and fill in your answers.
+2. Open `workspace/answers.json` and fill in your answers. You can edit this file using any text editor.
 
 #### Example Format
 Use exact values from the artifacts.
