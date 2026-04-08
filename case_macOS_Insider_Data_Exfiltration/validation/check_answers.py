@@ -24,7 +24,6 @@ ANSWER_KEY_PATH = Path("validation/answer_key.json")
 
 def load_json_file(path: Path, description: str) -> dict[str, Any]:
     """Load a JSON file and ensure it is a dictionary."""
-
     if not path.exists():
         print(f"[ERROR] Could not find {description}: {path}")
         sys.exit(1)
@@ -70,24 +69,24 @@ def normalize_list_of_strings(value: Any) -> list[str]:
     return result
 
 def normalize_string_set(value: Any) -> set[str]:
-       """Convert list to set for order-insensitive comparison."""
-       return {item.strip() for item in normalize_list_of_strings(value)}
+    """Convert list to set for order-insensitive comparison."""
+    return {item.strip() for item in normalize_list_of_strings(value)}
 
 def contains_any(text: str, keywords: list[str]) -> bool:
-       """Check if any keyword appears in text."""
-       return any(keyword in text for keyword in keywords)
+    """Check if any keyword appears in text."""
+    return any(keyword in text for keyword in keywords)
 
 def validate_exact_string(student_value: Any, expected_value: str) -> bool:
-       """Validate exact string match (case-insensitive)."""
-       return normalize_string(student_value) == normalize_string(expected_value)
+    """Validate exact string match (case-insensitive)."""
+    return normalize_string(student_value) == normalize_string(expected_value)
 
 def validate_exact_path(student_value: Any, expected_value: str) -> bool:
-       """Validate exact path match (normalized)."""
-       return normalize_path(student_value) == normalize_path(expected_value)
+    """Validate exact path match (normalized)."""
+    return normalize_path(student_value) == normalize_path(expected_value)
 
 def validate_exact_set(student_value: Any, expected_values: list[str]) -> bool:
-       """Validate exact set of values (order does not matter)."""
-       return normalize_string_set(student_value) == {v.strip() for v in expected_values}
+    """Validate exact set of values (order does not matter)."""
+    return normalize_string_set(student_value) == {v.strip() for v in expected_values}
 
 def validate_keyword_text(student_value: Any, required_groups: dict[str, list[str]]) -> bool:
     """Validate text contains at least one keyword from each required group."""
@@ -95,10 +94,10 @@ def validate_keyword_text(student_value: Any, required_groups: dict[str, list[st
         combined = " ".join(str(v) for v in student_value)
     else:
         combined = str(student_value)
-           
+
     norm = normalize_string(combined)
-       
-    for _, keywords in required_groups.items():
+
+    for keywords in required_groups.values():
         normalized_keywords = [normalize_string(k) for k in keywords]
         if not contains_any(norm, normalized_keywords):
             return False
@@ -110,10 +109,10 @@ def validate_keyword_list(student_value: Any, allowed_keywords: list[str]) -> bo
         combined = " ".join(str(v) for v in student_value)
     else:
         combined = str(student_value)
-           
+
     norm = normalize_string(combined)
     normalized_keywords = [normalize_string(k) for k in allowed_keywords]
-       
+
     return contains_any(norm, normalized_keywords)
 
 def validate_sequence(student_value: Any, required_groups: dict[str, list[str]]) -> bool:
@@ -125,9 +124,9 @@ def validate_sequence(student_value: Any, required_groups: dict[str, list[str]])
     else:
         combined = str(student_value)
         has_multiple_steps = False
-           
+
     norm = normalize_string(combined)
-       
+
     for keywords in required_groups.values():
         normalized_keywords = [normalize_string(k) for k in keywords]
         if not contains_any(norm, normalized_keywords):
@@ -141,25 +140,25 @@ def validate_sequence(student_value: Any, required_groups: dict[str, list[str]])
 def validate_field(student_value: Any, rule: dict[str, Any]) -> bool:
     """Dispatch validation based on rule type."""
     rule_type = rule.get("type")
-       
+
     if rule_type == "exact_string":
         return validate_exact_string(student_value, rule["expected"])
-           
+
     if rule_type == "exact_path":
         return validate_exact_path(student_value, rule["expected"])
 
     if rule_type == "exact_set":
         return validate_exact_set(student_value, rule["expected"])
-           
+
     if rule_type == "keyword_text":
         return validate_keyword_text(student_value, rule["required_groups"])
-           
+
     if rule_type == "keyword_list":
         return validate_keyword_list(student_value, rule["keywords"])
 
     if rule_type == "sequence":
         return validate_sequence(student_value, rule["required_groups"])
-       
+
     raise ValueError(f"Unknown validation type: {rule_type}")
 
 def main() -> None:
@@ -196,18 +195,17 @@ def main() -> None:
     total_questions = len(required_fields)
     correct_count = 0
 
-    # Header
     print("DFIR Simulation Platform - Validation Results")
     print(f"Case: {case_name}")
-    print("-" * 50)
+    print()
 
-    # Per-Question Validation
     for field in required_fields:
         rule = validators.get(field)
 
         if not rule:
             print(f"{field}: INCORRECT")
             continue
+
         try:
             is_correct = validate_field(answers.get(field), rule)
         except Exception:
@@ -219,11 +217,10 @@ def main() -> None:
         else:
             print(f"{field}: INCORRECT")
 
-    # Final summary line
-    print("-" * 50)
+    print()
     print(f"{correct_count}/{total_questions} questions correct")
 
-    sys.exit(0 if correct == total else 1)
+    sys.exit(0 if correct_count == total_questions else 1)
 
 if __name__ == "__main__":
     main()
