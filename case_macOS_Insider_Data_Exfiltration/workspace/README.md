@@ -1,43 +1,38 @@
 # Workspace Guide
-
-This directory contains the files you will use to record your findings during the investigation.
+This directory contains the files you will use to organize your investigation and submit your answers.
 
 ---
-## Workflow
+## Overview
+Your goal is to analyze the provided artifacts, reconstruct what happened, and answer the investigation questions using evidence.
 
+A typical workflow is:
+1. Analyze the evidence
+2. Build a timeline (recommended)
+3. Record your answers
+4. Run validation
+
+---
 ### Step 1 — Analyze the Evidence
-
-Begin by examining the artifacts in the `evidence/` directory.
+Examine the artifacts in the `evidence/` directory.
 
 Focus on:
-
 * Filesystem structure
 * Browser activity
 * Relationships between artifacts
 
-Not all artifacts are relevant. Your goal is to identify meaningful patterns.
+Not all artifacts are relevant. Your goal is to identify meaningful patterns and connections.
 
 ---
 ### Step 2 — Build a Timeline (Recommended)
-
-Use:
-```
-timeline_template.csv
-```
-to organize events into a sequence.
-
+Use `timeline_template.csv` to organize events into a sequence.
 
 The timeline is not graded, but it is the most effective way to:
 * Understand what happened
 * Correlate multiple artifacts
 * Answer the investigation questions
 
----
-## How to Build the Timeline
-
-Each row should represent a meaningful event.
-
-Include:
+#### How to Use the Timeline
+Each row should represent a meaningful event and include:
 * What happened
 * Which artifact supports it
 * Why the artifact supports your conclusion
@@ -48,64 +43,24 @@ The timeline template includes more rows than you will likely need.
 * Only include meaningful events supported by evidence
 * Focus on quality of events, not quantity  
 
-A complete timeline for this case will typically use a subset of the available rows.
+#### Important Context for This Case
+* Filesystem artifacts do not include full timestamp metadata
+* Most timestamps come from browser artifacts
+* Some steps must be inferred through correlation
 
-### Important Notes
-
-* Filesystem artifacts do **not include full timestamp metadata**
-* Most timestamps come from **browser artifacts**
-* Some steps must be **inferred through correlation**
-
-You are expected to:
-* Combine multiple artifacts
-* Use logical reasoning
-* Support conclusions with evidence
+You are expected to combine multiple artifacts and use logical reasoning to build a sequence of events.
 
 ---
-### What to Look For
-
-Examples of relevant events:
-* Presence of sensitive files
-* Files appearing in multiple directories
-* Creation or presence of a staging directory
-* Browser access to external services
-* Activity that connects local files to external interaction
-
----
-### Tips
-
-* Focus on **important events**, not everything
-* Look for **relationships between files and directories**
-* Correlate filesystem activity with browser activity
-* Avoid assumptions not supported by evidence
-
----
-### Common Mistakes
-
-* Treating all files as equally important
-* Ignoring duplicated files across directories
-* Relying on only one artifact
-* Assuming intent without evidence
-
----
-### Step 3 — Complete Your Answers
-
-Use:
-```
-answers_template.json
-```
+### Step 3 — Record Your Answers
+Use `answers_template.json` to record your answers.
 
 Steps:
-1. Copy this file to `answers.json`
-2. Fill in all required fields
-3. Use exact values from the artifacts where applicable
+1. From the case's root directory, run: `cp workspace/answers_template.json workspace/answers.json`.
+2. Open `workspace/answers.json` and fill in your answers.
 
----
-### Answer Guidelines
 
-* All answers must be supported by evidence
-* Use exact file names, paths, and values
-* Some questions require combining multiple sources
+
+
 
 ---
 ### Step 4 — Run Validation
