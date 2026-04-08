@@ -2,7 +2,6 @@
 
 ---
 ## Background
-
 Applied Logic Platforms (ALP) is a SaaS company that develops internal developer tooling and customer workflow automation software. 
 
 Engineers have access to internal documentation, API credentials, and limited customer data for testing purposes.
@@ -11,10 +10,9 @@ ALP maintains centralized monitoring and alerting capabilities, but developer sy
 
 ---
 ## Situation
+An employee, Jason Wang, recently submitted his two-week resignation notice.
 
-An employee, **Jason Wang**, recently submitted his two-week resignation notice.
-
-Shortly after, the security team observed **unusual activity** associated with his account over the weekend.
+Shortly after, the security team observed unusual activity associated with his account over the weekend.
 
 This activity included:
 * Activity involving internal files occurring outside normal working hours
@@ -32,18 +30,15 @@ Due to the timing and context, this activity has been flagged for review.
 
 This system is Jason’s company-issued travel laptop. It contains a mix of work-related and personal activities and is not configured as a tightly restricted enterprise device.
 
----
-## Account Context
-
+### Account Context
 Jason uses multiple Google accounts on this system:
 * A work-related account used for development activity  
 * A personal account accessible within the same browser  
 
-This setup allows multiple accounts to be active within a single browser session.
+This configuration allows multiple accounts to be active within a single browser session.
 
 ---
 ## Investigation Scope
-
 You have been provided with forensic artifacts extracted from Jason’s system.
 
 Your task is to determine:
@@ -55,16 +50,14 @@ Some activity may need to be inferred through correlation of multiple artifacts 
 
 ---
 ## Important Notes
-
 * The user has legitimate access to the files on this system
 * No assumptions should be made about intent
 * All conclusions must be based on observable evidence
 
-This investigation focuses on **what happened**, not why.
+This investigation focuses on what happened, not why.
 
 ---
 ## Objective
+Analyze the provided artifacts and reconstruct a clear, evidence-supported sequence of events.
 
-Analyze the provided artifacts and reconstruct a **clear, evidence-supported sequence of events**.
-
-No conclusions have been made. The purpose of the investigation is to determine what occurred and whether any sensitive data was mishandled. 
+No conclusions have been made. The purpose of the investigation is to determine what occurred and whether any sensitive data may have been mishandled. 
