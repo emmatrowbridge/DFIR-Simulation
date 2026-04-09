@@ -5,21 +5,28 @@
 
 ---
 ## Overview
-
 This case simulates a digital forensics and incident response (DFIR) investigation involving potential insider data exfiltration on a macOS system.
 
 You are provided with a curated set of forensic artifacts extracted from a company-issued device. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
 
-This is an **introductory-level (easy)** case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, timeline reconstruction, and correlation of events.
+This is an introductory-level (easy) case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, identifying relevant activity, timeline reconstruction, correlating evidence across sources, and reconstructing a sequence of events.
 
 ---
-## Scenario Summary
+## Getting Started
+Begin by cloning the repository and navigating into it:
+```
+git clone https://github.com/emmatrowbridge/DFIR-Simulation.git
+cd case_macOS_insider_data_exfiltration
+```
+Start by reading:
+* `case_brief.md` for background and context
+* `investigation_questions.md` for what you need to answer
 
-A company employee’s system has been flagged for unusual activity shortly after submitting their resignation. The behavior involves access to internal files and interaction with external services.
 
-No conclusions have been made.
 
-Your role is to investigate what happened using the available evidence.
+
+
+
 
 ---
 ## Repository Structure
