@@ -75,4 +75,4 @@ A strong investigation is not about finding a single clue—it is about connecti
 Individual actions may appear normal on their own. Your task is to determine whether they form a meaningful pattern when viewed together.
 
 ---
-Good luck!
+**Good luck!**
