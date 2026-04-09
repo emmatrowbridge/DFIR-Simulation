@@ -5,7 +5,7 @@
 
 ---
 ## Overview
-This case simulates a digital forensics and incident response (DFIR) investigation involving potential insider data exfiltration on a macOS system.
+This case simulates a digital forensics and incident response (DFIR) investigation involving potential **insider data exfiltration on a macOS system.**
 
 You are provided with a curated set of forensic artifacts extracted from a company-issued device. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
 
