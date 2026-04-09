@@ -16,245 +16,63 @@ This is an introductory-level (easy) case. The scenario is intentionally structu
 Begin by cloning the repository and navigating into it:
 ```
 git clone https://github.com/emmatrowbridge/DFIR-Simulation.git
-cd case_macOS_insider_data_exfiltration
+cd DFIR-Simulation/case_macOS_insider_data_exfiltration
 ```
 Start by reading:
 * `case_brief.md` for background and context
 * `investigation_questions.md` for what you need to answer
 
-
-
-
-
-
-
----
-## Repository Structure
-
-```
-case_macOS_insider_data_exfiltration/
-│
-├── README.md (you are here!)
-├── case_brief.md
-├── investigation_questions.md
-│
-├── evidence/
-│   ├── BrowserArtifacts/
-│   │   ├── chrome_history.csv
-│   │   └── cookies.csv
-│   │
-│   └── FileSystem/
-│       ├── Desktop/
-│       │   ├── meeting_notes.txt
-│       │   └── todo.md
-│       │
-│       ├── Documents/
-│       │   ├── Notes/
-│       │   │   └── ideas.txt
-│       │   │
-│       │   ├── Personal/
-│       │   │   └── journal.txt
-│       │   │
-│       │   └── archive/
-│       │       ├── api_keys.txt
-│       │       ├── customer_data.csv
-│       │       └── internal_roadmap.pdf
-│       │
-│       └── Projects/
-│           ├── alp-app/
-│           │   └── app.py
-│           │
-│           ├── internal-tools/
-│           │   ├── api_keys.txt
-│           │   ├── customer_data.csv
-│           │   └── internal_roadmap.pdf
-│           │
-│           └── sandbox-scripts/
-│               └── test.sh
-│
-├── workspace/
-│   ├── README.md
-│   ├── answers_template.json
-│   └── timeline_template.csv
-│
-└── validation/
-    └── check_answers.py
-```
-
----
-## What You Are Given
-
-### Browser Artifacts
-
-Located in:
-```
-evidence/BrowserArtifacts/
-```
-
-Includes:
-* Chrome browsing history
-* Cookies
-
-These artifacts help identify:
-* External services accessed
-* Timing of browser activity
-
-### Filesystem Artifacts
-
-Located in:
-```
-evidence/FileSystem/
-```
-
-These artifacts represent a reconstructed view of the user’s filesystem based on files extracted from the disk image.
-
-They include:
-* Desktop files
-* Documents (including user-created directories)
-* Project directories and internal files
-
-These are files recovered from the system and organized to reflect the original directory structure.
-
-### Important Note on Filesystem Data
-
-These files are **not full forensic exports** and may not include complete metadata such as:
-* Precise access timestamps
-* Full MAC time history
-* Low-level filesystem artifacts
-
-Instead, the filesystem evidence in this case is intended to help you:
-* Identify which files exist and where
-* Understand relationships between directories
-* Recognize staging or duplication of files
-* Provide context for user activity
-
-You will need to rely on **combining filesystem structure with browser activity** to reconstruct events.
-
----
-## Your Objective
-
-You are acting as a forensic analyst.
-
-Your task is to:
-1. Examine the provided artifacts
-2. Identify relevant activity
-3. Reconstruct a timeline of events
-4. Answer all investigation questions
-5. Ensure every conclusion is supported by evidence
-
-You should expect to combine multiple artifacts to answer most questions rather than relying on a single source.
-
 ---
 ## Investigation Approach
+All evidence is located in the `evidence/` directory. You should download and analyze these files locally on your machine, not directly in GitHub.
 
-This case is **artifact-driven**, not tool-driven.
+A typical workflow looks like this:
+* explore the directory structure in your terminal
+* open files using appropriate tools (text editor, spreadsheet viewer, PDF viewer)
+* identify which artifacts are relevant
+* begin connecting activity across files
 
-You may use any approach you prefer, including:
-* Manual inspection
-* Spreadsheet analysis
-* Scripting (e.g., Python)
+You are not expected to use specialized forensic tools for this case. Basic file inspection and careful reasoning are sufficient.
 
-To successfully complete the case, you will need to:
-* Analyze filesystem structure and file relationships
-* Identify duplicated or staged files across directories
-* Examine browser history for external activity
-* Correlate filesystem state with browser events
-* Reconstruct a logical sequence of actions
+Focus on identifying patterns such as:
+* where sensitive files are located
+* whether files appear in multiple directories
+* whether any directory appears to be used for staging
+* browser activity that connects to external services
 
-Note: Because filesystem metadata is intentionally limited, **timeline reconstruction will depend heavily on browser artifacts and logical inference based on file placement and duplication**. In this case, timestamps are primarily derived from browser artifacts rather than filesystem metadata.
-
----
-## Workspace Files
-
-The `workspace/` directory contains templates you will use to record your findings.
-
-### Required
-
-* `answers_template.json`
-  This file contains the structured format for answering the investigation questions.
-  You must complete this file before running validation.
-
-### Strongly Recommended
-
-* `timeline_template.csv`
-  Use this file to build a timeline of events.
-  This will help you organize findings and support your answers.
-
-* `timeline_template_notes.txt`
-  Provides guidance on how to construct a timeline, including:
-  * What types of events to include
-  * How to correlate artifacts
-  * How to document supporting evidence
-
-### Important
-
-* Only `answers_template.json` is checked by the validation script
-* The timeline files are for your analysis process
-* A well-constructed timeline will make this case significantly easier
+Most importantly, do not treat artifacts in isolation. This case requires correlating multiple sources of evidence to understand what happened.
 
 ---
-## Answer Requirements
+## Recording Your Answers
+All answers should be completed in the `workspace/` directory.
 
-All answers must:
-* Be directly supported by evidence
-* Match artifact data exactly (file names, paths, and values present in the artifacts)
-* Avoid assumptions not backed by observable data
+Create your working file by copying the template: `cp workspace/answers_template.json workspace/answers.json`.
 
-If an answer cannot be supported by the provided artifacts, it should not be included.
+Open `answers.json` in a text editor and fill in your answers.
 
----
-## Validation
+Make sure:
+* you use exact file names and paths where applicable
+* your answers are directly supported by evidence
+* the file remains valid JSON (do not remove quotes, commas, or brackets)
 
-After completing your answers, run:
-```bash
-python validation/check_answers.py
-```
-
-The validation system will:
-* Check each answer for correctness
-* Indicate correct vs incorrect responses
-
-The validation system will NOT:
-* Provide hints
-* Reveal correct answers
-* Partially credit responses
+You may also use `timeline_template.csv` to organize events as you investigate. This is not required, but it can make it much easier to track relationships between artifacts.
 
 ---
-## Important Guidelines
+## Checking Your Work
+Once you have completed your answers, run: `python validation/check_answers.py`.
 
-* Not all artifacts are relevant
-* Background activity is intentionally included
-* Some conclusions require correlating multiple artifacts
-* The absence of expected activity can be meaningful
-* Do not assume malicious intent without evidence
+The script will evaluate each answer and report whether it is correct or incorrect, along with a final summary.
 
-This investigation focuses on **what happened**, not speculation.
+### About the Validation System
+The validation system is included to support self-guided learning and immediate feedback.
 
----
-## Learning Goals
-
-By completing this case, you will:
-* Identify and interpret common forensic artifacts
-* Correlate filesystem and browser activity
-* Reconstruct a clear investigative timeline
-* Produce defensible, evidence-based conclusions
+The file `validation/answer_key.json` contains the expected answers used by the script. While it is included in the repository, you should not rely on it during the investigation. The goal of this case is to develop your ability to interpret artifacts and reach conclusions independently.
 
 ---
-## Getting Started
+## Final Notes
+A strong investigation is not about finding a single clue—it is about connecting multiple pieces of evidence into a coherent explanation.
 
-1. Read `case_brief.md`
-2. Review `investigation_questions.md`
-3. Begin analyzing the artifacts in `evidence/`
-4. Record your findings in the workspace files
+Individual actions may appear normal on their own. Your task is to determine whether they form a meaningful pattern when viewed together.
 
 ---
-## Final Note
-
-This case reflects how real investigations work:
-
-Individual actions may appear normal in isolation.
-Your task is to determine whether they form a meaningful pattern when correlated together.
-
----
-
 Good luck!
