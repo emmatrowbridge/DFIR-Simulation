@@ -9,7 +9,7 @@ This case simulates a digital forensics and incident response (DFIR) investigati
 
 You are provided with a curated set of forensic artifacts extracted from a company-issued device. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
 
-This is an introductory-level (easy) case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, identifying relevant activity, timeline reconstruction, correlating evidence across sources, and reconstructing a sequence of events.
+This is an **introductory-level (easy)** case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, identifying relevant activity, timeline reconstruction, correlating evidence across sources, and reconstructing a sequence of events.
 
 ---
 ## Getting Started
