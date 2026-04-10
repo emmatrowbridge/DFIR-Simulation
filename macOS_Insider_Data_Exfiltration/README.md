@@ -15,8 +15,8 @@ This is an **introductory-level (easy)** case. The scenario is intentionally str
 ## Getting Started
 Begin by cloning the repository and navigating into it:
 ```
-git clone https://github.com/emmatrowbridge/DFIR-Simulation.git
-cd DFIR-Simulation/case_macOS_insider_data_exfiltration
+git clone https://github.com/emmatrowbridge/DFIR-Simulation-Platform.git
+cd DFIR-Simulation-platform/macOS_insider_data_exfiltration
 ```
 Start by reading:
 * `case_brief.md` for background and context
