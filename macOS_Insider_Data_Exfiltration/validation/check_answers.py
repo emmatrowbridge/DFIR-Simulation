@@ -132,7 +132,7 @@ def validate_sequence(student_value: Any, required_groups: dict[str, list[str]])
         if not contains_any(norm, normalized_keywords):
             return False
 
-    sequence_markers = ["first", "then", "next", "after", "before", "finally"]
+    sequence_markers = ["first", "then", "next", "after", "before", "finally", "and then", "followed by", "which led to", "subsequently"]
     has_sequence_language = contains_any(norm, sequence_markers) or has_multiple_steps
 
     return has_sequence_language
