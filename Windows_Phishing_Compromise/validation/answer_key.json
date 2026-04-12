@@ -1,0 +1,135 @@
+{
+  "case_name": "Windows Phishing Compromise",
+  "required_fields": [
+    "q1_downloaded_document_name",
+    "q2_file_location",
+    "q3_file_type_executed",
+    "q4_application_used",
+    "q5_user_action_enabled_execution",
+    "q6_spawned_process",
+    "q7_missing_security_log_reason",
+    "q8_sequence_of_actions",
+    "q9_post_execution_activity",
+    "q10_attack_type"
+  ],
+  "validators": {
+    "q1_downloaded_document_name": {
+      "type": "exact_string",
+      "expected": "Client_Opportunity_Form.docm"
+    },
+    "q2_file_location": {
+      "type": "exact_path",
+      "expected": "C:\\Users\\aBohnson\\Downloads\\Client_Opportunity_Form.docm"
+    },
+    "q3_file_type_executed": {
+      "type": "keyword_list",
+      "keywords": [
+        ".docm",
+        "macro-enabled word document",
+        "macro enabled document",
+        "word document",
+        "document"
+      ]
+    },
+    "q4_application_used": {
+      "type": "keyword_list",
+      "keywords": [
+        "microsoft word",
+        "word",
+        "winword.exe"
+      ]
+    },
+    "q5_user_action_enabled_execution": {
+      "type": "keyword_list",
+      "keywords": [
+        "enabled macros",
+        "enable content",
+        "clicked enable",
+        "macro execution",
+        "enabled editing"
+      ]
+    },
+    "q6_spawned_process": {
+      "type": "keyword_list",
+      "keywords": [
+        "powershell.exe",
+        "powershell"
+      ]
+    },
+    "q7_missing_security_log_reason": {
+      "type": "keyword_text",
+      "required_groups": {
+        "logging_source": [
+          "security log",
+          "security logs",
+          "windows security log"
+        ],
+        "missing_reason": [
+          "not enabled",
+          "not configured",
+          "audit policy",
+          "auditing disabled",
+          "not logged"
+        ],
+        "actual_source": [
+          "powershell log",
+          "process log",
+          "application log",
+          "sysmon",
+          "event log"
+        ]
+      }
+    },
+    "q8_sequence_of_actions": {
+      "type": "sequence",
+      "required_groups": {
+        "email_access": [
+          "email",
+          "attachment",
+          "downloaded"
+        ],
+        "document_execution": [
+          "opened in word",
+          "word",
+          "document opened"
+        ],
+        "macro_action": [
+          "enabled macros",
+          "enable content",
+          "macro"
+        ],
+        "process_execution": [
+          "powershell",
+          "spawned process",
+          "child process"
+        ]
+      }
+    },
+    "q9_post_execution_activity": {
+      "type": "keyword_text",
+      "required_groups": {
+        "process_activity": [
+          "powershell",
+          "command execution",
+          "script"
+        ],
+        "visible_action": [
+          "notepad",
+          "image",
+          "application opened",
+          "file created"
+        ]
+      }
+    },
+    "q10_attack_type": {
+      "type": "keyword_list",
+      "keywords": [
+        "phishing",
+        "spear phishing",
+        "malicious attachment",
+        "macro-based phishing",
+        "initial access"
+      ]
+    }
+  }
+}
