@@ -19,7 +19,7 @@ This activity occurred soon after Asa opened an email attachment received during
 Observed activity includes:
 * Document execution from a downloaded email attachment
 * Unexpected process creation shortly after opening the file
-* PowerShell activity on the workstation
+* Malicious activity on the workstation
 * Additional application activity following execution
 
 Due to the timing and context, this activity has been flagged for review.
