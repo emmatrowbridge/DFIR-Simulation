@@ -6,14 +6,14 @@ Rather than guiding you step-by-step, these cases are built around the idea that
 
 ## Available Cases
 
-The platform currently includes several scenarios, each focused on a different type of incident:
+The platform currently includes several scenarios, ordered by increasing difficulty:
 
 | Case | Platform | Scenario | Difficulty |
 |------|--------|---------|------------|
-| Windows Phishing Compromise | Windows | Credential theft and subsequent account misuse following a phishing attack | Easy–Medium |
-| Windows Ransomware Intrusion | Windows | System compromise leading to ransomware execution and file encryption | Medium (In Progress) |
-| macOS Infostealer Malware | macOS | Malware infection resulting in the collection and staging of sensitive data | Easy–Medium |
 | macOS Insider Data Exfiltration | macOS | An employee accesses and stages internal company data prior to departure | Easy |
+| Windows Phishing Compromise | Windows | Credential theft and subsequent account misuse following a phishing attack | Easy |
+| macOS Infostealer Malware | macOS | Malware infection resulting in the collection and staging of sensitive data | Medium |
+| Windows Ransomware Intrusion | Windows | System compromise leading to ransomware execution and file encryption | Hard |
 
 Each case is self-contained and includes its own background context, investigation questions, and validation system.
 
@@ -21,9 +21,9 @@ Each case is self-contained and includes its own background context, investigati
 
 To get started, clone the repository and select a case:
 
-git clone https://github.com/emmatrowbridge/DFIR-Simulation-Platform.git
-cd DFIR-Simulation-Platform
-cd <case_name>
+git clone https://github.com/emmatrowbridge/DFIR-Simulation-Platform.git  
+cd DFIR-Simulation-Platform  
+cd <case_name>  
 
 From there, the case README will guide you through the setup and investigation process. In general, you will analyze artifacts located in the evidence/ directory, reconstruct a sequence of events, and record your conclusions in a structured answer file. A validation script is included in each case to provide immediate feedback on your results.
 
@@ -39,11 +39,11 @@ This platform is intended for students, self-learners, and instructors who want 
 
 ## Repository Structure
 
-DFIR-Simulation-Platform/
-├── Windows_Phishing_Compromise/
-├── Windows_Ransomware_Intrusion/
-├── macOS_Infostealer_Malware/
-├── macOS_Insider_Data_Exfiltration/
+DFIR-Simulation-Platform/  
+├── macOS_Insider_Data_Exfiltration/  
+├── Windows_Phishing_Compromise/  
+├── macOS_Infostealer_Malware/  
+├── Windows_Ransomware_Intrusion/  
 
 Within each directory, you will find the artifacts, investigation materials, and validation scripts needed to complete the case.
 
@@ -54,4 +54,4 @@ These cases are intentionally designed without step-by-step guidance. While the 
 ## Contributors
 
 Emma Trowbridge  
-Cam Zabroski  
+Cam Zabroski 
