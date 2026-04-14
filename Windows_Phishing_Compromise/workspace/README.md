@@ -31,6 +31,7 @@ Use `timeline_template.csv` to organize events into a sequence.
 The timeline is not graded, but it is the most effective way to:
 * Understand what happened
 * Correlate multiple artifacts
+* Track timestamps across artifact types
 * Answer the investigation questions
 
 #### How to Use the Timeline
@@ -45,14 +46,6 @@ The timeline template includes more rows than you will likely need.
 * Only include meaningful events supported by evidence
 * Focus on quality of events, not quantity
 
-#### Important Context for This Case
-* Some activity may need to be inferred through correlation
-* Process relationships are critical in this case
-* PowerShell execution should be correlated with document activity
-* The sequence of user actions is central to the investigation
-
-You are expected to combine multiple artifacts and use logical reasoning to build a sequence of events.
-
 ---
 ### Step 3 — Record Your Answers
 Use `answers_template.json` to record your answers.
@@ -64,11 +57,11 @@ Use `answers_template.json` to record your answers.
 #### Example Format
 Use exact values from the artifacts.
 
-Example of a string field: `"q0_example": "malicious_attachment.docm"`
+Example of a string field: `"q0_example": "/Users/full_directory_path_here"`
 
-Example of an array field: `"q0_example": ["WINWORD.EXE", "powershell.exe", "notepad.exe"]`
+Example of an array field: `"q0_example": ["example1", "example2", "example3"]`
 
-Some questions require a short, structured sequence rather than a single value. For example: `"q0_example_sequence_of_actions": ["User opened the email attachment", "The document was opened in Microsoft Word", "PowerShell was spawned as a child process"]`
+Some questions require a short, structured sequence rather than a single value. For example: `"q0_example_sequence_of_actions": ["First step in the sequence", "Second step in the sequence", "Third step in the sequence"]`
 
 ---
 ### Step 4 — Run Validation
@@ -79,6 +72,7 @@ The validation script checks whether your answers are correct, but it only repor
 The goal of this case is not just to get the right answers, but to develop the ability to:
 * Interpret artifacts
 * Correlate evidence
+* Use timestamps and metadata effectively
 * Reach defensible conclusions independently
 
 ---
