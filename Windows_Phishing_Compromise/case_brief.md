@@ -71,3 +71,4 @@ This investigation focuses on reconstructing what happened, not assigning intent
 Analyze the provided artifacts and reconstruct a clear, evidence-supported sequence of events.
 
 No conclusions have been made. The purpose of the investigation is to determine what occurred and whether the system was compromised through phishing-based document execution.
+
