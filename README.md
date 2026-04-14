@@ -8,6 +8,8 @@ The project was built around a simple idea: it should be possible to practice re
 
 Each case presents a scenario supported by forensic artifacts extracted from a system. Your task is to examine those artifacts, determine what is relevant to the investigation, and reconstruct what happened using evidence. The focus is not on following instructions, but on developing the ability to interpret data and connect findings across multiple sources.
 
+This platform is intended for anyone who wants to practice forensic investigation in a structured but self-guided way. It is especially useful for students and self-learners who may not have access to dedicated DFIR coursework, as well as for anyone looking to strengthen their analytical approach to security incidents.
+
 ## Available Cases
 The platform currently includes the following cases, ordered by increasing difficulty:
 
@@ -45,7 +47,3 @@ These cases are designed to build core DFIR skills:
 - Producing conclusions that are clearly supported by evidence  
 
 The goal is not just to find answers, but to understand how those answers are derived.
-
-## Purpose
-
-This platform is intended for anyone who wants to practice forensic investigation in a structured but self-guided way. It is especially useful for students and self-learners who may not have access to dedicated DFIR coursework, as well as for anyone looking to strengthen their analytical approach to security incidents.
