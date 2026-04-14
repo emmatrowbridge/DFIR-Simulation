@@ -1,134 +1,23 @@
 {
-  "_instructions": {
-    "description": "This file contains your structured answers to the investigation questions. Fill in each field based only on evidence from the case.",
-    "rules": [
-      "All answers must be derived directly from provided artifacts.",
-      "Do not guess or approximate answers.",
-      "Timestamps must follow the format: YYYY-MM-DD HH:MM:SS.",
-      "Use the correct timezone as specified in the case materials.",
-      "Artifact sources should clearly identify where the evidence was found.",
-      "Artifact paths should match the exact path or filename when applicable.",
-      "If multiple values are required, use a JSON array.",
-      "Do not modify the structure of this file."
-    ],
-    "field_explanations": {
-      "case_id": "Unique identifier for the case (provided in README).",
-      "case_title": "Name of the case.",
-      "platform": "Operating system of the case (e.g., macOS, Windows).",
-      "analyst_name": "Your name or identifier.",
-      "analysis_date": "Date the analysis was completed.",
-      "timezone_used": "Timezone used for all timestamps in this file.",
-      "answers": {
-        "question": "The investigation question being answered.",
-        "answer": "Your final answer.",
-        "artifact_source": "The artifact used to support the answer (e.g., Web Downloads, Event Logs).",
-        "notes": "Optional short explanation of how the answer was derived."
-      },
-      "final_assessment": {
-        "summary": "Short summary of what occurred in the incident.",
-        "confidence_level": "Your confidence in your findings (e.g., High, Medium, Low).",
-        "limitations": "Any uncertainty or missing data that affected your analysis."
-      }
-    }
-  },
-
-  "case_id": "",
-  "case_title": "Windows Phishing Compromise",
-  "platform": "Windows",
-  "analyst_name": "",
-  "analysis_date": "",
-  "timezone_used": "America/New_York",
-
-  "answers": {
-    "q1": {
-      "question": "What is the exact file name of the downloaded document relevant to the investigation?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q2": {
-      "question": "Where on the system was the file located?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q3": {
-      "question": "Which artifact confirms that the file was downloaded from the web?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q4": {
-      "question": "What type of file was executed?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q5": {
-      "question": "What application was used to open the file?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q6": {
-      "question": "What specific user action enabled execution of the document?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q7": {
-      "question": "What process was spawned as a result of opening the file?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q8": {
-      "question": "Which artifact best supports the parent-child relationship between the document and the spawned process?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q9": {
-      "question": "What observable activity occurred after the document was executed?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q10": {
-      "question": "Which temporary or log files were created as a result of the execution?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q11": {
-      "question": "Why did the activity not appear in the Windows Security logs?",
-      "answer": "",
-      "artifact_source": "",
-      "notes": ""
-    },
-    "q12": {
-      "question": "Using multiple artifacts, reconstruct the most likely sequence of user and system actions that occurred from the moment the attachment was accessed to the final observable system activity.",
-      "answer": [],
-      "artifact_source": [],
-      "notes": ""
-    },
-    "q13": {
-      "question": "Which combination of artifacts most strongly supports that this activity represents a phishing-based compromise rather than normal onboarding behavior, and why?",
-      "answer": "",
-      "artifact_source": [],
-      "notes": ""
-    },
-    "q14": {
-      "question": "Which artifacts distinguish legitimate onboarding activity from malicious activity?",
-      "answer": [],
-      "artifact_source": [],
-      "notes": ""
-    }
-  },
-
-  "final_assessment": {
-    "summary": "",
-    "confidence_level": "",
-    "limitations": ""
-  }
+  "_instructions": [
+    "Complete each field using only the provided evidence.",
+    "Use exact file names, paths, and values when the evidence supports them.",
+    "Copy this file to workspace/answers.json before running validation.",
+    "Do not include assumptions that are not supported by the artifacts.",
+    "Use workspace/README.md for guidance and formatting examples."
+  ],
+  "q1_downloaded_document_name": "",
+  "q2_file_location": [],
+  "q3_download_confirmation_artifact": kw list,
+  "q4_file_type_executed": kwlist,
+  "q5_application_used": kwlist,
+  "q6_user_action_enabled_executio": kwlist,
+  "q7_spawned_process": kwlist,
+  "q8_parent_child_relationship_artifact": kwlist,
+  "q9_post_execution_activity": kw text,
+  "q10_temp_or_log_files_created": kw list,
+  "q11_missing_security_log_reason": kw text,   
+  "q12_sequence_of_actions": sequence,
+  "q13_phishing_evidence": kw text,
+  "q14_benign_vs_malicious_artifacts": kw text
 }
