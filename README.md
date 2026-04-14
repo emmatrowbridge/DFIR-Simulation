@@ -38,7 +38,7 @@ A typical investigation involves:
 
 The emphasis is on producing conclusions that are clearly supported by evidence.
 
-## What This Project Emphasizes
+## Takeaways
 
 These cases are designed to build core DFIR skills:
 - Thinking critically about what data matters  
