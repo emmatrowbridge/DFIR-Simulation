@@ -1,12 +1,15 @@
 # DFIR Simulation Platform
 
-This repository contains a collection of hands-on digital forensics and incident response (DFIR) cases designed to simulate real investigative work. Each scenario provides a curated set of forensic artifacts and asks a simple but demanding question: what actually happened, and how can you prove it?
+**Developers:** Emma Trowbridge and Cam Zabroski
 
-Rather than guiding you step-by-step, these cases are built around the idea that forensic analysis is a process of interpretation. You are given evidence, not instructions. Your task is to examine that evidence, identify what is meaningful, and construct a coherent, evidence-based explanation of events.
+This repository contains a collection of digital forensics and incident response (DFIR) cases designed to give practical, hands-on investigation experience.
+
+The project was built around a simple idea: it should be possible to practice real forensic analysis without needing a specialized lab environment or access to formal coursework. Many existing DFIR exercises rely on full disk images, platform-specific tooling, or tightly guided walkthroughs. This platform takes a different approach by providing curated artifacts that can be analyzed on any system, while still preserving the structure and ambiguity of a real investigation.
+
+Each case presents a scenario supported by forensic artifacts extracted from a system. Your task is to examine those artifacts, determine what is relevant, and reconstruct what happened using evidence. The focus is not on following instructions, but on developing the ability to interpret data and connect findings across multiple sources.
 
 ## Available Cases
-
-The platform currently includes several scenarios, ordered by increasing difficulty:
+The platform currently includes the following cases, ordered by increasing difficulty:
 
 | Case | Platform | Scenario | Difficulty |
 |------|--------|---------|------------|
@@ -15,43 +18,34 @@ The platform currently includes several scenarios, ordered by increasing difficu
 | macOS Infostealer Malware | macOS | Malware infection resulting in the collection and staging of sensitive data | Medium |
 | Windows Ransomware Intrusion | Windows | System compromise leading to ransomware execution and file encryption | Hard |
 
-Each case is self-contained and includes its own background context, investigation questions, and validation system.
+Each case is self-contained and includes its own background, investigation questions, and answer validation.
 
-## How the Platform Works
+**Note:** The platform labels (macOS, Windows) refer to the system the artifacts were extracted from. All cases can be completed on macOS, Windows, or Linux.
 
-To get started, clone the repository and select a case:
+## Investigation Process
 
-git clone https://github.com/emmatrowbridge/DFIR-Simulation-Platform.git  
-cd DFIR-Simulation-Platform  
-cd <case_name>  
+Start by opening a case directory and reading the provided materials. From there, you will work directly with the artifacts in the `evidence/` folder.
 
-From there, the case README will guide you through the setup and investigation process. In general, you will analyze artifacts located in the evidence/ directory, reconstruct a sequence of events, and record your conclusions in a structured answer file. A validation script is included in each case to provide immediate feedback on your results.
+A typical investigation involves:
+- Exploring the available files and understanding their structure  
+- Identifying which artifacts are relevant  
+- Looking for patterns across multiple sources  
+- Reconstructing a sequence of events  
+- Supporting your conclusions with evidence
+- Validating your results using the provided script
 
-## What You Will Practice
+The emphasis is on producing conclusions that are clearly supported by evidence.
 
-These cases are designed to develop the core skills required in DFIR work. This includes identifying relevant activity within a large set of artifacts, recognizing patterns across different data sources, and connecting individual observations into a defensible narrative. Many questions cannot be answered by looking at a single file in isolation; instead, they require correlating multiple pieces of evidence.
+## What This Project Emphasizes
 
-The emphasis throughout is on reasoning. The goal is not simply to locate artifacts, but to understand their significance and use them to support clear conclusions.
+These cases are designed to build core DFIR skills:
+- Thinking critically about what data matters  
+- Correlating activity across different artifacts  
+- Recognizing when individual actions form a larger pattern  
+- Producing conclusions that are clearly supported by evidence  
 
-## Who This Is For
+The goal is not just to find answers, but to understand how those answers are derived.
 
-This platform is intended for students, self-learners, and instructors who want practical experience with forensic investigation. It is especially useful for those preparing for cybersecurity roles, where the ability to analyze and interpret evidence is critical.
+## Purpose
 
-## Repository Structure
-
-DFIR-Simulation-Platform/  
-├── macOS_Insider_Data_Exfiltration/  
-├── Windows_Phishing_Compromise/  
-├── macOS_Infostealer_Malware/  
-├── Windows_Ransomware_Intrusion/  
-
-Within each directory, you will find the artifacts, investigation materials, and validation scripts needed to complete the case.
-
-## Final Note
-
-These cases are intentionally designed without step-by-step guidance. While the answer key is included for validation purposes, the value of the platform comes from working through the investigation independently and developing your own understanding of the evidence.
-
-## Contributors
-
-Emma Trowbridge  
-Cam Zabroski 
+This platform is intended for anyone who wants to practice forensic investigation in a structured but self-guided way. It is especially useful for students and self-learners who may not have access to dedicated DFIR coursework, as well as for anyone looking to strengthen their analytical approach to security incidents.
