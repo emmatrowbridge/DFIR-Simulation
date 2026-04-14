@@ -51,7 +51,6 @@ You have been provided with forensic artifacts extracted from Asa’s system.
 Your task is to determine:
 * What email or file initiated the activity
 * What process execution occurred on the system
-* Whether PowerShell was executed
 * What user action enabled execution
 * What sequence of events led to the observed activity
 * Whether the behavior is consistent with a phishing-based compromise
