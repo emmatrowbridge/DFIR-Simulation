@@ -2,23 +2,23 @@
 
 **Developers:** Emma Trowbridge and Cam Zabroski
 
-This repository contains a collection of digital forensics and incident response (DFIR) cases designed to give practical, hands-on investigation experience.
+This repository contains a collection of digital forensics and incident response (DFIR) cases designed to provide practical, hands-on investigation experience.
 
 The project was built around a simple idea: it should be possible to practice real forensic analysis without needing a specialized lab environment or access to formal coursework. Many existing DFIR exercises rely on full disk images, platform-specific tooling, or tightly guided walkthroughs. This platform takes a different approach by providing curated artifacts that can be analyzed on any system, while still preserving the structure and ambiguity of a real investigation.
 
-Each case presents a scenario supported by forensic artifacts extracted from a system. Your task is to examine those artifacts, determine what is relevant, and reconstruct what happened using evidence. The focus is not on following instructions, but on developing the ability to interpret data and connect findings across multiple sources.
+Each case presents a scenario supported by forensic artifacts extracted from a system. Your task is to examine those artifacts, determine what is relevant to the investigation, and reconstruct what happened using evidence. The focus is not on following instructions, but on developing the ability to interpret data and connect findings across multiple sources.
 
 ## Available Cases
 The platform currently includes the following cases, ordered by increasing difficulty:
 
 | Case | Platform | Scenario | Difficulty |
 |------|--------|---------|------------|
-| macOS Insider Data Exfiltration | macOS | An employee accesses and stages internal company data prior to departure | Easy |
-| Windows Phishing Compromise | Windows | Credential theft and subsequent account misuse following a phishing attack | Easy |
-| macOS Infostealer Malware | macOS | Malware infection resulting in the collection and staging of sensitive data | Medium |
-| Windows Ransomware Intrusion | Windows | System compromise leading to ransomware execution and file encryption | Hard |
+| macOS Insider Data Exfiltration | macOS | Following a resignation notice, an engineer’s system shows unusual after-hours activity involving internal files and external services | Easy |
+| Windows Phishing Compromise | Windows | A newly onboarded employee’s workstation exhibits unexpected activity shortly after opening an email attachment | Easy |
+| macOS Infostealer Malware | macOS | Further analysis of a developer system reveals external downloads, script execution, and file activity inconsistent with prior findings | Medium |
+| Windows Ransomware Intrusion | Windows | A workstation displays signs of system compromise and abnormal file behavior consistent with a potential ransomware event, requiring full incident reconstruction | Hard |
 
-Each case is self-contained and includes its own background, investigation questions, and answer validation.
+Each case is self-contained and includes its own background, investigation questions, and answer validation. The cases are intended to be completed in order, with each introducing additional complexity in both artifacts and analysis.
 
 **Note:** The platform labels (macOS, Windows) refer to the system the artifacts were extracted from. All cases can be completed on macOS, Windows, or Linux.
 
