@@ -33,6 +33,3 @@ All answers must be directly supported by artifacts.
 * Support all answers with evidence from the artifacts
 * Some questions require combining multiple sources of data
 * Do not include assumptions not supported by evidence
-
-
-
