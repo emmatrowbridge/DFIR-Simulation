@@ -5,11 +5,11 @@
 
 ---
 ## Overview
-This case simulates a digital forensics and incident response (DFIR) investigation involving a **phishing-based compromise on a Windows corporate workstation.**
+This case simulates a digital forensics and incident response (DFIR) investigation involving a potential **phishing-based compromise on a Windows corporate workstation.**
 
 You are provided with a curated set of forensic artifacts extracted from a newly provisioned employee device. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
 
-This is an **introductory-to-intermediate level (medium)** case. The scenario is intentionally structured to require correlation across multiple sources of evidence, allowing you to develop core DFIR skills such as artifact analysis, process correlation, timeline reconstruction, user behavior analysis, and reconstructing a complete sequence of events.
+This is an **introductory-level (easy)** case. The scenario is intentionally structured to be clear and focused, allowing you to develop core DFIR skills such as artifact analysis, identifying relevant activity, timeline reconstruction, correlating evidence across sources, and reconstructing a sequence of events.
 
 ---
 ## Getting Started
