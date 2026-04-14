@@ -38,11 +38,9 @@ You are not expected to use specialized forensic tools for this case. Basic file
 Focus on identifying patterns such as:
 * suspicious email activity and attachments
 * downloaded files and their locations
-* Microsoft Word document execution
-* PowerShell process creation
+* file executions
 * parent-child process relationships
-* files created or modified after execution
-* observable user interaction with the malicious document
+* observable user interaction with a malicious document
 
 Most importantly, do not treat artifacts in isolation. This case requires correlating multiple sources of evidence to understand what happened.
 
@@ -80,4 +78,3 @@ Individual actions may appear normal on their own. Your task is to determine whe
 
 ---
 **Good luck!**
-
