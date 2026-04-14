@@ -21,7 +21,7 @@
       "answers": {
         "question": "The investigation question being answered.",
         "answer": "Your final answer.",
-        "artifact_source": "The artifact used to support the answer (e.g., Safari History, Event Logs).",
+        "artifact_source": "The artifact used to support the answer (e.g., Web Downloads, Event Logs).",
         "notes": "Optional short explanation of how the answer was derived."
       },
       "final_assessment": {
@@ -32,73 +32,96 @@
     }
   },
 
-{
   "case_id": "",
-  "case_title": "",
-  "platform": "",
+  "case_title": "Windows Phishing Compromise",
+  "platform": "Windows",
   "analyst_name": "",
   "analysis_date": "",
-  "timezone_used": "",
+  "timezone_used": "America/New_York",
 
   "answers": {
     "q1": {
-      "question": "",
+      "question": "What is the exact file name of the downloaded document relevant to the investigation?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q2": {
-      "question": "",
+      "question": "Where on the system was the file located?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q3": {
-      "question": "",
+      "question": "Which artifact confirms that the file was downloaded from the web?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q4": {
-      "question": "",
+      "question": "What type of file was executed?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q5": {
-      "question": "",
+      "question": "What application was used to open the file?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q6": {
-      "question": "",
+      "question": "What specific user action enabled execution of the document?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q7": {
-      "question": "",
+      "question": "What process was spawned as a result of opening the file?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
     },
     "q8": {
-      "question": "",
+      "question": "Which artifact best supports the parent-child relationship between the document and the spawned process?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
-    }
+    },
     "q9": {
-      "question": "",
+      "question": "What observable activity occurred after the document was executed?",
       "answer": "",
       "artifact_source": "",
       "notes": ""
-    }
+    },
     "q10": {
-      "question": "",
+      "question": "Which temporary or log files were created as a result of the execution?",
       "answer": "",
       "artifact_source": "",
+      "notes": ""
+    },
+    "q11": {
+      "question": "Why did the activity not appear in the Windows Security logs?",
+      "answer": "",
+      "artifact_source": "",
+      "notes": ""
+    },
+    "q12": {
+      "question": "Using multiple artifacts, reconstruct the most likely sequence of user and system actions that occurred from the moment the attachment was accessed to the final observable system activity.",
+      "answer": [],
+      "artifact_source": [],
+      "notes": ""
+    },
+    "q13": {
+      "question": "Which combination of artifacts most strongly supports that this activity represents a phishing-based compromise rather than normal onboarding behavior, and why?",
+      "answer": "",
+      "artifact_source": [],
+      "notes": ""
+    },
+    "q14": {
+      "question": "Which artifacts distinguish legitimate onboarding activity from malicious activity?",
+      "answer": [],
+      "artifact_source": [],
       "notes": ""
     }
   },
