@@ -3,35 +3,47 @@
   "required_fields": [
     "q1_downloaded_document_name",
     "q2_file_location",
-    "q3_file_type_executed",
-    "q4_application_used",
-    "q5_user_action_enabled_execution",
-    "q6_spawned_process",
-    "q7_missing_security_log_reason",
-    "q8_sequence_of_actions",
+    "q3_download_confirmation_artifact",
+    "q4_file_type_executed",
+    "q5_application_used",
+    "q6_user_action_enabled_execution",
+    "q7_spawned_process",
+    "q8_parent_child_relationship_artifact",
     "q9_post_execution_activity",
-    "q10_attack_type"
+    "q10_temp_or_log_files_created",
+    "q11_missing_security_log_reason",
+    "q12_sequence_of_actions",
+    "q13_phishing_evidence",
+    "q14_benign_vs_malicious_artifacts"
   ],
   "validators": {
     "q1_downloaded_document_name": {
       "type": "exact_string",
-      "expected": "Client_Opportunity_Form.docm"
+      "expected": "Client Opportunity Review.docm"
     },
     "q2_file_location": {
       "type": "exact_path",
-      "expected": "C:\\Users\\aBohnson\\Downloads\\Client_Opportunity_Form.docm"
+      "expected": "C:\\Users\\Asa Bohnson\\Downloads\\Client Opportunity Review.docm"
     },
-    "q3_file_type_executed": {
+    "q3_download_confirmation_artifact": {
+      "type": "keyword_list",
+      "keywords": [
+        "web downloads",
+        "downloads csv",
+        "browser history",
+        "download history"
+      ]
+    },
+    "q4_file_type_executed": {
       "type": "keyword_list",
       "keywords": [
         ".docm",
         "macro-enabled word document",
         "macro enabled document",
-        "word document",
-        "document"
+        "word document"
       ]
     },
-    "q4_application_used": {
+    "q5_application_used": {
       "type": "keyword_list",
       "keywords": [
         "microsoft word",
@@ -39,71 +51,30 @@
         "winword.exe"
       ]
     },
-    "q5_user_action_enabled_execution": {
+    "q6_user_action_enabled_execution": {
       "type": "keyword_list",
       "keywords": [
         "enabled macros",
         "enable content",
         "clicked enable",
-        "macro execution",
-        "enabled editing"
+        "enable editing"
       ]
     },
-    "q6_spawned_process": {
+    "q7_spawned_process": {
       "type": "keyword_list",
       "keywords": [
         "powershell.exe",
         "powershell"
       ]
     },
-    "q7_missing_security_log_reason": {
-      "type": "keyword_text",
-      "required_groups": {
-        "logging_source": [
-          "security log",
-          "security logs",
-          "windows security log"
-        ],
-        "missing_reason": [
-          "not enabled",
-          "not configured",
-          "audit policy",
-          "auditing disabled",
-          "not logged"
-        ],
-        "actual_source": [
-          "powershell log",
-          "process log",
-          "application log",
-          "sysmon",
-          "event log"
-        ]
-      }
-    },
-    "q8_sequence_of_actions": {
-      "type": "sequence",
-      "required_groups": {
-        "email_access": [
-          "email",
-          "attachment",
-          "downloaded"
-        ],
-        "document_execution": [
-          "opened in word",
-          "word",
-          "document opened"
-        ],
-        "macro_action": [
-          "enabled macros",
-          "enable content",
-          "macro"
-        ],
-        "process_execution": [
-          "powershell",
-          "spawned process",
-          "child process"
-        ]
-      }
+    "q8_parent_child_relationship_artifact": {
+      "type": "keyword_list",
+      "keywords": [
+        "application logs",
+        "prefetch",
+        "notepad prefetch",
+        "process logs"
+      ]
     },
     "q9_post_execution_activity": {
       "type": "keyword_text",
@@ -115,21 +86,101 @@
         ],
         "visible_action": [
           "notepad",
-          "image",
           "application opened",
-          "file created"
+          "preview",
+          "log file"
         ]
       }
     },
-    "q10_attack_type": {
+    "q10_temp_or_log_files_created": {
       "type": "keyword_list",
       "keywords": [
-        "phishing",
-        "spear phishing",
-        "malicious attachment",
-        "macro-based phishing",
-        "initial access"
+        "client_preview_log.txt",
+        "temp",
+        "log file"
       ]
+    },
+    "q11_missing_security_log_reason": {
+      "type": "keyword_text",
+      "required_groups": {
+        "security_logs": [
+          "security log",
+          "security logs"
+        ],
+        "reason": [
+          "not enabled",
+          "audit policy",
+          "auditing disabled",
+          "not configured"
+        ]
+      }
+    },
+    "q12_sequence_of_actions": {
+      "type": "sequence",
+      "required_groups": {
+        "download": [
+          "downloaded",
+          "attachment",
+          "web"
+        ],
+        "execution": [
+          "word",
+          "opened",
+          "document"
+        ],
+        "macro": [
+          "macro",
+          "enable content",
+          "enabled"
+        ],
+        "process": [
+          "powershell",
+          "spawned",
+          "launched"
+        ],
+        "post_execution": [
+          "notepad",
+          "log file",
+          "preview"
+        ]
+      }
+    },
+    "q13_phishing_evidence": {
+      "type": "keyword_text",
+      "required_groups": {
+        "malicious_doc": [
+          ".docm",
+          "macro-enabled",
+          "attachment"
+        ],
+        "execution_chain": [
+          "word",
+          "powershell",
+          "spawned"
+        ],
+        "phishing_context": [
+          "email",
+          "onboarding",
+          "external"
+        ]
+      }
+    },
+    "q14_benign_vs_malicious_artifacts": {
+      "type": "keyword_text",
+      "required_groups": {
+        "benign": [
+          "welcomepacket",
+          "companypolicy",
+          "itsetupguide",
+          "onboarding"
+        ],
+        "malicious": [
+          ".docm",
+          "powershell",
+          "temp",
+          "log"
+        ]
+      }
     }
   }
 }
