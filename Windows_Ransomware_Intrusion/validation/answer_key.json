@@ -44,61 +44,80 @@
     },
 
     "q2_logon_type": {
-      "type": "keyword_list",
-      "keywords": ["3", "network", "10", "remoteinteractive"]
+      "type": "keyword_text",
+      "required_groups": {
+        "type": ["10", "remoteinteractive", "remote interactive"]
+      }
     },
 
     "q3_first_logon_timestamp": {
-      "type": "exact_string",
-      "expected": "2026-04-24 18:38"
+      "type": "keyword_text",
+      "required_groups": {
+        "date": ["2026-04-24", "4/24/2026", "04/24/2026"],
+        "time": ["18:38", "6:38"]
+      }
     },
 
     "q4_logon_id": {
-      "type": "exact_string",
-      "expected": "0x9C0EC0"
+      "type": "keyword_list",
+      "keywords": ["0x9CA21A", "0x9CA1C2"]
     },
 
     "q5_session_artifact": {
-      "type": "keyword_list",
-      "keywords": ["terminalservices", "localsessionmanager"]
+      "type": "keyword_text",
+      "required_groups": {
+        "provider": ["terminalservices", "terminal services"],
+        "channel": ["localsessionmanager", "local session manager"]
+      }
     },
 
     "q6_session_origin": {
       "type": "keyword_text",
       "required_groups": {
-        "remote": ["remote", "network"],
-        "evidence": ["logon type", "terminalservices"]
+        "origin": ["remote", "rdp", "remote desktop"],
+        "source": ["192.168.19.1"],
+        "artifact": ["terminalservices", "terminal services", "logon type 10"]
       }
     },
 
     "q7_suspicious_executable": {
-      "type": "keyword_list",
-      "keywords": ["python.exe", "python"]
+      "type": "exact_string",
+      "expected": "PYTHON.EXE"
     },
 
     "q8_execution_artifact": {
-      "type": "keyword_list",
-      "keywords": ["prefetch"]
+      "type": "keyword_text",
+      "required_groups": {
+        "artifact": ["prefetch"],
+        "file": ["PYTHON.EXE-E2B2C5E6", "python.exe-e2b2c5e6"]
+      }
     },
 
     "q9_executable_path": {
-      "type": "keyword_list",
-      "keywords": ["python"]
+      "type": "keyword_text",
+      "required_groups": {
+        "user": ["ITADMIN"],
+        "python_dir": ["PYTHON313"],
+        "executable": ["PYTHON.EXE"]
+      }
     },
 
     "q10_execution_count": {
-      "type": "keyword_list",
-      "keywords": ["2", "3", "4", "5"]
+      "type": "exact_string",
+      "expected": "7"
     },
 
     "q11_last_execution_timestamp": {
-      "type": "keyword_list",
-      "keywords": ["2026", "04"]
+      "type": "keyword_text",
+      "required_groups": {
+        "date": ["2026-04-24", "4/24/2026", "04/24/2026"],
+        "time": ["18:34:09", "6:34:09"]
+      }
     },
 
     "q12_additional_executable": {
-      "type": "keyword_list",
-      "keywords": ["nano.exe", "nano"]
+      "type": "exact_string",
+      "expected": "NANO.EXE"
     },
 
     "q13_modified_file_extension": {
@@ -107,31 +126,93 @@
     },
 
     "q14_example_modified_files": {
-      "type": "exact_set",
-      "expected": [
+      "type": "allowed_subset",
+      "min_count": 4,
+      "allowed": [
+        "field_team_assignments.csv.locked",
+        "closed_contracts.txt.locked",
+        "old_projects.txt.locked",
+        "contract_notes.txt.locked",
+        "permit_deadlines.txt.locked",
         "client_call_agenda.txt.locked",
+        "site_373.png.locked",
+        "site_671.jpg.locked",
+        "bih-chapter9.pdf.locked",
+        "Book.xlsx.locked",
+        "fema_npd_developing-and-maintaining-emergency_052125.pdf.locked",
+        "fema_pda_public-assistance-documentation-checklist.pdf.locked",
+        "NIST.SP.800-12r1.pdf.locked",
+        "Black and Beige Simple Typographic Qr Code Document (1).png.webp.locked",
+        "budget_notes.txt.locked",
+        "inspection_schedule.txt.locked",
+        "Question.zip.locked",
         "april_expenses.csv.locked",
         "vendor_payments.csv.locked",
-        "site_671.jpg.locked"
+        "team_updates.txt.locked",
+        "weekly_tasks.txt.locked",
+        "PBTG-Bridge-Barron-County-WI-e1712253655978.webp.locked",
+        "client_list.csv.locked",
+        "proposal_outline.txt.locked",
+        "environmental_notes.txt.locked",
+        "photos_reference.txt.locked",
+        "site_visit_log.txt.locked",
+        "contract_status.txt.locked",
+        "vendor_contacts.csv.locked",
+        "budget_estimate.csv.locked",
+        "draft_summary.txt.locked",
+        "stakeholder_notes.txt.locked"
       ]
     },
 
     "q15_affected_directories": {
-      "type": "keyword_list",
-      "keywords": ["documents", "finance", "vendors", "operations"]
+      "type": "allowed_subset",
+      "min_count": 3,
+      "allowed": [
+        "~/Users/mtann/Desktop",
+        "~/Users/mtann/Documents",
+        "~/Users/mtann/Downloads",
+        "~/Users/mtann/Pictures",
+        "~/Users/mtann/Stark_Engineering/Archive",
+        "~/Users/mtann/Stark_Engineering/Finance",
+        "~/Users/mtann/Stark_Engineering/Operations",
+        "~/Users/mtann/Stark_Engineering/Projects/Bridge_Inspection_Program",
+        "~/Users/mtann/Stark_Engineering/Projects/City_Contracts",
+        "~/Users/mtann/Stark_Engineering/Projects/Q2_Proposals",
+        "~/Users/mtann/Stark_Engineering/Projects/Site_Assessments",
+        "~/Users/mtann/Stark_Engineering/Projects/Transit_Expansion_Study",
+        "~/Users/mtann/Stark_Engineering/Vendors"
+      ]
     },
 
     "q16_scope_assessment": {
       "type": "keyword_text",
       "required_groups": {
-        "spread": ["multiple", "many", "widespread"],
-        "evidence": ["directories", "files"]
+        "scope": ["widespread", "broad", "multiple directories", "across multiple"],
+        "evidence1": ["desktop", "documents", "downloads", "pictures", "stark_engineering"],
+        "evidence2": ["locked", ".locked"]
       }
     },
 
     "q17_unaffected_file": {
       "type": "keyword_list",
-      "keywords": ["lol.txt"]
+      "keywords": [
+        "risk_notes.txt",
+        "closed_contracts.txt",
+        "old_projects.txt",
+        "Book.xlsx",
+        "april_expenses.csv",
+        "lol.txt",
+        "PBTG-Bridge-Barron-County-WI-e1712253655978.webp",
+        "client_list.csv",
+        "proposal_outline.txt",
+        "environmental_notes.txt",
+        "site_visit_log.txt",
+        "contract_status.txt",
+        "vendor_contacts.csv.txt",
+        "budget_estimate.csv",
+        "draft_summary.txt",
+        "stakeholder_notes.txt"
+      ]
     },
 
     "q18_ransom_note_filename": {
@@ -141,72 +222,100 @@
 
     "q19_ransom_note_quote": {
       "type": "keyword_list",
-      "keywords": ["encrypted", "system is no longer operational"]
+      "keywords": [
+        "Your files have been encrypted",
+        "This system is no longer operational",
+        "Data across this device has been locked",
+        "Do not attempt to recover files",
+        "Do not modify anything on this system",
+        "You will not restore access on your own"
+      ]
     },
 
     "q20_recovery_statement": {
       "type": "keyword_text",
       "required_groups": {
-        "no_recovery": ["not possible", "cannot recover", "no longer accessible"]
+        "recovery": ["will not restore", "not restore", "no longer accessible", "locked", "encrypted"],
+        "meaning": ["cannot", "not", "restricted", "no access"]
       }
     },
 
     "q21_ransom_note_warnings": {
       "type": "keyword_text",
       "required_groups": {
-        "warning1": ["do not attempt"],
-        "warning2": ["do not modify", "further activity"]
+        "recover": ["do not attempt to recover", "do not attempt"],
+        "modify": ["do not modify", "modify anything"],
+        "worse": ["further activity", "make things worse"]
       }
     },
 
     "q22_sequence_of_events": {
       "type": "keyword_text",
       "required_groups": {
-        "access": ["logon", "access"],
-        "execution": ["python", "execution"],
-        "impact": ["encrypted", "locked"],
-        "note": ["message", "note"]
+        "normal_user": ["mtann", "madison", "local"],
+        "remote_access": ["ITAdmin", "remote", "192.168.19.1"],
+        "execution": ["python", "PYTHON.EXE", "prefetch"],
+        "encryption": ["locked", ".locked", "encrypted"],
+        "note": ["lol.txt", "ransom note", "message"]
       }
     },
 
     "q23_initial_access_evidence": {
       "type": "keyword_text",
       "required_groups": {
-        "logon": ["4624", "logon"],
-        "account": ["itadmin"]
+        "security": ["Security", "4624"],
+        "account": ["ITAdmin"],
+        "remote": ["logon type 10", "RemoteInteractive", "192.168.19.1"]
       }
     },
 
     "q24_execution_evidence": {
       "type": "keyword_text",
       "required_groups": {
-        "prefetch": ["prefetch"],
-        "program": ["python"]
+        "prefetch": ["prefetch", "PYTHON.EXE-E2B2C5E6"],
+        "program": ["PYTHON.EXE", "python"],
+        "count_or_time": ["7", "18:34", "2026-04-24"]
       }
     },
 
     "q25_multi_system_impact_evidence": {
       "type": "keyword_text",
       "required_groups": {
-        "spread": ["multiple", "across"],
-        "files": ["directories", "files"]
+        "spread": ["multiple", "across", "many"],
+        "locations": ["directories", "folders"],
+        "locked": ["locked", ".locked"]
       }
     },
 
     "q26_overall_impact": {
-      "type": "keyword_list",
-      "keywords": ["widespread", "multiple", "system-wide"]
+      "type": "keyword_text",
+      "required_groups": {
+        "scope": ["widespread", "broad", "many", "multiple"],
+        "impact": ["encrypted", "locked", "modified"],
+        "location": ["directories", "folders", "system"]
+      }
     },
 
     "q27_affected_file_types": {
-      "type": "exact_set",
-      "expected": [".txt", ".csv", ".jpg"]
+      "type": "allowed_subset",
+      "min_count": 3,
+      "allowed": [
+        ".txt",
+        ".csv",
+        ".jpg",
+        ".png",
+        ".pdf",
+        ".xlsx",
+        ".zip",
+        ".webp"
+      ]
     },
 
     "q28_additional_impact_evidence": {
       "type": "keyword_text",
       "required_groups": {
-        "others": ["other users", "multiple systems", "similar problems"]
+        "case_scope": ["other users", "additional users", "similar problems"],
+        "impact": ["reported", "affected", "problems"]
       }
     }
   }
