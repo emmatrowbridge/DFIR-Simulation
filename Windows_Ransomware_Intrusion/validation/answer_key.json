@@ -1,40 +1,40 @@
 {
-  "case_name": "macOS Infostealer Malware",
+  "case_name": "Windows Ransomware Intrusion",
 
   "required_fields": [
-    "q1_internal_tools_path",
-    "q2_internal_tools_files",
-    "q3_staging_directory_path",
-    "q4_staged_files",
-    "q5_recent_api_keys_copy",
+    "q1_account_name",
+    "q2_logon_type",
+    "q3_first_logon_timestamp",
+    "q4_logon_id",
+    "q5_session_artifact",
+    "q6_session_origin",
 
-    "q6_dmg_path",
-    "q7_script_path",
+    "q7_suspicious_executable",
     "q8_execution_artifact",
-    "q9_mount_command",
-    "q10_python_command",
-    "q11_execution_count",
-    "q12_additional_commands",
+    "q9_executable_path",
+    "q10_execution_count",
+    "q11_last_execution_timestamp",
+    "q12_additional_executable",
 
-    "q13_encoding_method",
-    "q14_encoded_string",
-    "q15_decoded_string",
-    "q16_exfiltration_command",
-    "q17_target_directories",
-    "q18_target_extensions",
+    "q13_modified_file_extension",
+    "q14_example_modified_files",
+    "q15_affected_directories",
+    "q16_scope_assessment",
+    "q17_unaffected_file",
 
-    "q19_browser",
-    "q20_platform",
-    "q21_search_query",
-    "q22_repository",
-    "q23_downloaded_file",
-    "q24_download_timestamp",
-    "q25_first_repo_visit_timestamp",
+    "q18_ransom_note_filename",
+    "q19_ransom_note_quote",
+    "q20_recovery_statement",
+    "q21_ransom_note_warnings",
 
-    "q26_removal_evidence",
-    "q27_staged_and_trashed_files",
+    "q22_sequence_of_events",
+    "q23_initial_access_evidence",
+    "q24_execution_evidence",
+    "q25_multi_system_impact_evidence",
 
-    "q28_sequence_of_actions"
+    "q26_overall_impact",
+    "q27_affected_file_types",
+    "q28_additional_impact_evidence"
   ],
 
   "validators": {
