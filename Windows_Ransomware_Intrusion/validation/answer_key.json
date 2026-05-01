@@ -38,185 +38,175 @@
   ],
 
   "validators": {
-
-    "q1_internal_tools_path": {
-      "type": "exact_path",
-      "expected": "/Users/jwang/Projects/internal-tools"
+    "q1_account_name": {
+      "type": "exact_string",
+      "expected": "ITAdmin"
     },
 
-    "q2_internal_tools_files": {
-      "type": "exact_set",
-      "expected": ["api_keys.txt", "customer_data.csv", "internal_roadmap.pdf"]
-    },
-
-    "q3_staging_directory_path": {
-      "type": "exact_path",
-      "expected": "/private/tmp/.data_archive"
-    },
-
-    "q4_staged_files": {
-      "type": "exact_set",
-      "expected": ["api_keys.txt", "customer_data.csv", "internal_roadmap.pdf", "meeting_notes.txt"]
-    },
-
-    "q5_recent_api_keys_copy": {
+    "q2_logon_type": {
       "type": "keyword_list",
-      "keywords": ["data_archive", "/private/tmp/.data_archive"]
+      "keywords": ["3", "network", "10", "remoteinteractive"]
     },
 
-    "q6_dmg_path": {
-      "type": "exact_path",
-      "expected": "/Users/jwang/Downloads/DesktopCleaner_v2.dmg"
+    "q3_first_logon_timestamp": {
+      "type": "exact_string",
+      "expected": "2026-04-24 18:38"
     },
 
-    "q7_script_path": {
-      "type": "exact_path",
-      "expected": "/Users/jwang/Library/Application Support/.devhelper/cleanup_agent.py"
+    "q4_logon_id": {
+      "type": "exact_string",
+      "expected": "0x9C0EC0"
+    },
+
+    "q5_session_artifact": {
+      "type": "keyword_list",
+      "keywords": ["terminalservices", "localsessionmanager"]
+    },
+
+    "q6_session_origin": {
+      "type": "keyword_text",
+      "required_groups": {
+        "remote": ["remote", "network"],
+        "evidence": ["logon type", "terminalservices"]
+      }
+    },
+
+    "q7_suspicious_executable": {
+      "type": "keyword_list",
+      "keywords": ["python.exe", "python"]
     },
 
     "q8_execution_artifact": {
       "type": "keyword_list",
-      "keywords": ["zsh_history"]
+      "keywords": ["prefetch"]
     },
 
-    "q9_mount_command": {
-      "type": "keyword_text",
-      "required_groups": {
-        "tool": ["hdiutil"],
-        "action": ["attach"],
-        "file": ["desktopcleaner_v2.dmg"]
-      }
-    },
-
-    "q10_python_command": {
-      "type": "keyword_text",
-      "required_groups": {
-        "python": ["python3"],
-        "script": ["cleanup_agent.py"]
-      }
-    },
-
-    "q11_execution_count": {
-      "type": "exact_string",
-      "expected": "6"
-    },
-
-    "q12_additional_commands": {
-      "type": "keyword_text",
-      "required_groups": {
-        "cmd1": ["xcode-select"],
-        "cmd2": ["which python3"]
-      }
-    },
-
-    "q13_encoding_method": {
+    "q9_executable_path": {
       "type": "keyword_list",
-      "keywords": ["base64"]
+      "keywords": ["python"]
     },
 
-    "q14_encoded_string": {
+    "q10_execution_count": {
+      "type": "keyword_list",
+      "keywords": ["2", "3", "4", "5"]
+    },
+
+    "q11_last_execution_timestamp": {
+      "type": "keyword_list",
+      "keywords": ["2026", "04"]
+    },
+
+    "q12_additional_executable": {
+      "type": "keyword_list",
+      "keywords": ["nano.exe", "nano"]
+    },
+
+    "q13_modified_file_extension": {
       "type": "exact_string",
-      "expected": "aHR0cDovL2RldnN5bmMtYXBpLmNvbS91cGxvYWQ="
+      "expected": ".locked"
     },
 
-    "q15_decoded_string": {
-      "type": "exact_string",
-      "expected": "http://devsync-api.com/upload"
-    },
-
-    "q16_exfiltration_command": {
-      "type": "keyword_text",
-      "required_groups": {
-        "tool": ["curl"],
-        "method": ["post"],
-        "file": ["file=@"]
-      }
-    },
-
-    "q17_target_directories": {
+    "q14_example_modified_files": {
       "type": "exact_set",
       "expected": [
-        "Documents",
-        "Desktop",
-        "Downloads",
-        "Projects",
-        ".ssh"
+        "client_call_agenda.txt.locked",
+        "april_expenses.csv.locked",
+        "vendor_payments.csv.locked",
+        "site_671.jpg.locked"
       ]
     },
 
-    "q18_target_extensions": {
-      "type": "exact_set",
-      "expected": [
-        ".txt",
-        ".csv",
-        ".json",
-        ".env",
-        ".pem",
-        ".key",
-        ".md",
-        ".pdf",
-        ".yaml",
-        ".yml"
-      ]
-    },
-
-    "q19_browser": {
+    "q15_affected_directories": {
       "type": "keyword_list",
-      "keywords": ["chrome"]
+      "keywords": ["documents", "finance", "vendors", "operations"]
     },
 
-    "q20_platform": {
-      "type": "keyword_list",
-      "keywords": ["github"]
-    },
-
-    "q21_search_query": {
+    "q16_scope_assessment": {
       "type": "keyword_text",
       "required_groups": {
-        "terms": ["macos", "desktop", "cleanup"]
+        "spread": ["multiple", "many", "widespread"],
+        "evidence": ["directories", "files"]
       }
     },
 
-    "q22_repository": {
+    "q17_unaffected_file": {
+      "type": "keyword_list",
+      "keywords": ["lol.txt"]
+    },
+
+    "q18_ransom_note_filename": {
+      "type": "exact_string",
+      "expected": "lol.txt"
+    },
+
+    "q19_ransom_note_quote": {
+      "type": "keyword_list",
+      "keywords": ["encrypted", "system is no longer operational"]
+    },
+
+    "q20_recovery_statement": {
       "type": "keyword_text",
       "required_groups": {
-        "owner": ["emmatrowbridge"],
-        "repo": ["desktop-cleaner"]
+        "no_recovery": ["not possible", "cannot recover", "no longer accessible"]
       }
     },
 
-    "q23_downloaded_file": {
-      "type": "exact_string",
-      "expected": "DesktopCleaner_v2.dmg"
-    },
-
-    "q24_download_timestamp": {
-      "type": "exact_string",
-      "expected": "2026-04-02 10:54:33"
-    },
-
-    "q25_first_repo_visit_timestamp": {
-      "type": "exact_string",
-      "expected": "2026-04-02 10:51:43"
-    },
-
-    "q26_removal_evidence": {
-      "type": "keyword_list",
-      "keywords": [".trash", "trash"]
-    },
-
-    "q27_staged_and_trashed_files": {
-      "type": "exact_set",
-      "expected": ["internal_roadmap.pdf", "meeting_notes.txt", "todo.md"]
-    },
-
-    "q28_sequence_of_actions": {
+    "q21_ransom_note_warnings": {
       "type": "keyword_text",
       "required_groups": {
-        "search": ["search", "github"],
-        "download": ["download", "dmg"],
-        "execution": ["python", "cleanup_agent"],
-        "staging": ["data_archive", "staging"]
+        "warning1": ["do not attempt"],
+        "warning2": ["do not modify", "further activity"]
+      }
+    },
+
+    "q22_sequence_of_events": {
+      "type": "keyword_text",
+      "required_groups": {
+        "access": ["logon", "access"],
+        "execution": ["python", "execution"],
+        "impact": ["encrypted", "locked"],
+        "note": ["message", "note"]
+      }
+    },
+
+    "q23_initial_access_evidence": {
+      "type": "keyword_text",
+      "required_groups": {
+        "logon": ["4624", "logon"],
+        "account": ["itadmin"]
+      }
+    },
+
+    "q24_execution_evidence": {
+      "type": "keyword_text",
+      "required_groups": {
+        "prefetch": ["prefetch"],
+        "program": ["python"]
+      }
+    },
+
+    "q25_multi_system_impact_evidence": {
+      "type": "keyword_text",
+      "required_groups": {
+        "spread": ["multiple", "across"],
+        "files": ["directories", "files"]
+      }
+    },
+
+    "q26_overall_impact": {
+      "type": "keyword_list",
+      "keywords": ["widespread", "multiple", "system-wide"]
+    },
+
+    "q27_affected_file_types": {
+      "type": "exact_set",
+      "expected": [".txt", ".csv", ".jpg"]
+    },
+
+    "q28_additional_impact_evidence": {
+      "type": "keyword_text",
+      "required_groups": {
+        "others": ["other users", "multiple systems", "similar problems"]
       }
     }
   }
