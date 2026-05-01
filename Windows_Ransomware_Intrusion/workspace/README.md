@@ -17,8 +17,8 @@ Examine the artifacts in the `evidence/` directory.
 
 Focus on:
 * Filesystem structure
-* Browser activity
-* Command history
+* System and account activity
+* Program execution artifacts
 * Relationships between artifacts
 * Timestamps and metadata
 
@@ -57,7 +57,7 @@ Use `answers_template.json` to record your answers.
 #### Example Format
 Use exact values from the artifacts.
 
-Example of a string field: `"q0_example": "/Users/jwang/full_directory_path_here"`
+Example of a string field: `"q0_example": "full_value_here"`
 
 Example of an array field: `"q0_example": ["example1", "example2", "example3"]`
 
@@ -73,13 +73,15 @@ The goal of this case is not just to get the right answers, but to develop the a
 * Interpret artifacts
 * Correlate evidence
 * Use timestamps and metadata effectively
+* Determine how activity originated and progressed
 * Reach defensible conclusions independently
 
 ---
 ## Final Goal
 By the end of this process, you should be able to:
 * Reconstruct a clear sequence of events
-* Explain how artifacts relate to each other
+* Explain how the incident originated
+* Assess how widespread the impact is
 * Support your conclusions with evidence
 * Answer all investigation questions confidently
 
