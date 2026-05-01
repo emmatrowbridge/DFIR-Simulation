@@ -10,6 +10,7 @@ Supported validation rule types
 - keyword_text : flexible short-answer validation using required keyword groups in text
 - keyword_list : flexible validation using one or more acceptable keywords
 - sequence     : flexible sequence validation requiring multiple keyword groups and a sequence structure
+- allowed_subset : validates that a list contains at least a required number of approved values
 """
 
 from __future__ import annotations
@@ -137,6 +138,16 @@ def validate_sequence(student_value: Any, required_groups: dict[str, list[str]])
 
     return has_sequence_language
 
+def validate_allowed_subset(student_value: Any, allowed_values: list[str], min_count: int) -> bool:
+    """Validate that the answer contains at least min_count allowed values."""
+    student_items = normalize_string_set(student_value)
+    allowed_items = {normalize_string(v) for v in allowed_values}
+
+    if len(student_items) < min_count:
+        return False
+
+    return student_items.issubset(allowed_items)
+
 def validate_field(student_value: Any, rule: dict[str, Any]) -> bool:
     """Dispatch validation based on rule type."""
     rule_type = rule.get("type")
@@ -158,6 +169,13 @@ def validate_field(student_value: Any, rule: dict[str, Any]) -> bool:
 
     if rule_type == "sequence":
         return validate_sequence(student_value, rule["required_groups"])
+
+    if rule_type == "allowed_subset":
+        return validate_allowed_subset(
+            student_value,
+            rule["allowed"],
+            rule.get("min_count", 1)
+        )
 
     raise ValueError(f"Unknown validation type: {rule_type}")
 
