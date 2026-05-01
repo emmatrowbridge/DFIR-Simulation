@@ -5,13 +5,13 @@
 
 ---
 ## Overview
-This case simulates a digital forensics and incident response (DFIR) investigation involving a suspected **ransomware intrusion on a Windows system.**
+This case simulates a digital forensics and incident response (DFIR) investigation involving suspected **ransomware intrusion on a Windows system.**
 
-You are provided with a curated set of forensic artifacts extracted from XYZ.
+You are provided with a curated set of forensic artifacts extracted from a company workstation. Your objective is to analyze the evidence, reconstruct what occurred, and produce evidence-based conclusions.
 
-This is a **high-difficulty** case. You will need to XYZ.
+This is a **high-difficulty** case. You will need to analyze and correlate multiple types of artifacts, including Windows event logs, remote session activity, browser activity, program execution artifacts, filesystem data, and encrypted files.
 
-The case is designed to help you develop core DFIR skills such as XYZ.
+The case is designed to help you develop core DFIR skills such as interpreting system and user activity, identifying meaningful patterns in large sets of data, correlating evidence across multiple sources, and reconstructing a sequence of events from incomplete or misleading information.
 
 ---
 ## Getting Started
@@ -37,7 +37,11 @@ A typical workflow looks like this:
 You are not expected to use specialized forensic tools for this case. Basic file inspection and careful reasoning are sufficient.
 
 Focus on identifying patterns such as:
-XYZ
+* how activity progresses across different artifacts
+* whether actions appear isolated or part of a larger sequence
+* inconsistencies between expected and observed behavior
+* relationships between user activity, system activity, and file changes
+* how multiple small details may combine to indicate something significant over time
 
 Most importantly, do not treat artifacts in isolation. This case requires correlating multiple sources of evidence to understand what happened.
 
