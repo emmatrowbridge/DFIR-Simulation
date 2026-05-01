@@ -2,8 +2,6 @@
 """
 DFIR Simulation Platform - Answer Validation Script
 
-
-
 Supported validation rule types
 -------------------------------
 - exact_string : exact text match, case-insensitive
